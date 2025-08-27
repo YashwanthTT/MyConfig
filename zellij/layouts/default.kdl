@@ -93,11 +93,12 @@ layout {
     default_tab_template {
         pane size=2 borderless=true {
             plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
-                format_left   "{mode}#[bg=#181926] {tabs}"
+                format_left   "{mode} {tabs}"
+                // format_left   "{mode}#[bg=#181926] {tabs}"
                 format_center ""
                 // format_right  "{swformat_right "#[bg=#181818,fg=#6699cc]#[bg=#6699cc,fg=#282828,bold] #[bg=#383838,fg=#d8d8d8,bold] {session} #[bg=#585858,fg=#d8d8d8,bold]"format_right "#[bg=#181818,fg=#6699cc]#[bg=#6699cc,fg=#282828,bold] #[bg=#383838,fg=#d8d8d8,bold] {session} #[bg=#585858,fg=#d8d8d8,bold]"ap_layout}#[bg=#181926,fg=#494d64] Zellij: #[bg=#181926,fg=#494d64]{session}"
-                format_right  "#[bg=#181818,fg=#6699cc]#[bg=#6699cc,fg=#282828,bold] #[bg=#383838,fg=#d8d8d8,bold] {session} #[bg=#585858,fg=#d8d8d8,bold]"
-                format_space  "#[bg=#181926]"
+                format_right  "fg=#6699cc]#[bg=#6699cc,=#282828,bold] #[bg=#383838,fg=#d8d8d8,bold] {session} #[bg=#585858,fg=#d8d8d8,bold]"
+                format_space  ""
                 format_hide_on_overlength "true"
                 format_precedence "crl"
 
@@ -134,7 +135,7 @@ layout {
                 tab_active_sync         "#[bg=#181926,fg=#eed49f]#[bg=#eed49f,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{sync_indicator}#[bg=#181926,fg=#363a4f,bold]"
 
                 // separator between the tabs
-                tab_separator           "#[bg=#181926] "
+                tab_separator           " "
 
                 // indicators
                 tab_sync_indicator       " "

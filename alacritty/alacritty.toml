@@ -2,21 +2,24 @@ general.import = [
     "~/.config/alacritty/themes/themes/coolnight.toml"
 ]
 
+
 [colors]
+
 primary = { background = "#000000", foreground = "#d8d8d8" }
 
+
 [window]
+
 padding.x = 9
 padding.y = 4
-
 decorations = "buttonless"
-
 opacity = 0.9
 blur = true
-
 option_as_alt = "both"
+startup_mode = "Maximized"
+
 
 [font]
-normal.family = "meslolgs nerd font mono"
 
+normal.family = "meslolgs nerd font mono"
 size = 18
