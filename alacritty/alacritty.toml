@@ -1,18 +1,22 @@
-[env]
-TERM = "xterm-256color"
+general.import = [
+    "~/.config/alacritty/themes/themes/coolnight.toml"
+]
+
+[colors]
+primary = { background = "#000000", foreground = "#d8d8d8" }
 
 [window]
-padding.x = 10
-padding.y = 10
+padding.x = 9
+padding.y = 4
 
-decorations = "Buttonless"
+decorations = "buttonless"
 
-opacity = 0.7
+opacity = 0.9
 blur = true
 
-option_as_alt = "Both"
+option_as_alt = "both"
 
 [font]
-normal.family = "MesloLGS Nerd Font Mono"
+normal.family = "meslolgs nerd font mono"
 
 size = 18
