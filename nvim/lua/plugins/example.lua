@@ -1,197 +1,56 @@
--- since this is just an example spec, don't actually load anything here and return an empty spec
--- stylua: ignore
-if true then return {} end
-
--- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
---
--- In your plugin files, you can:
--- * add extra plugins
--- * disable/enabled LazyVim plugins
--- * override the configuration of LazyVim plugins
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  "nvim-lualine/lualine.nvim",
+  opts = function(_, opts)
+    -- 1. Define a custom theme with new colors
+    local my_theme = {
+      normal = {
+        a = { bg = "#89b4fa", fg = "#1e1e2e", gui = "bold" }, -- Blue background, Dark text
+        b = { bg = "#585b70", fg = "#cdd6f4" }, -- Gray background, Light text
+        c = { bg = "#313244", fg = "#cdd6f4" }, -- Darker gray for filename background
+      },
+      insert = { a = { bg = "#a6e3a1", fg = "#1e1e2e", gui = "bold" } }, -- Green
+      visual = { a = { bg = "#f9e2af", fg = "#1e1e2e", gui = "bold" } }, -- Yellow
+      replace = { a = { bg = "#f38ba8", fg = "#1e1e2e", gui = "bold" } }, -- Red
+      command = { a = { bg = "#fab387", fg = "#1e1e2e", gui = "bold" } }, -- Orange
+      inactive = {
+        a = { bg = "#313244", fg = "#6c7086", gui = "bold" },
+        b = { bg = "#313244", fg = "#6c7086" },
+        c = { bg = "#1e1e2e", fg = "#6c7086" },
+      },
+    }
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+    -- 2. Apply the theme and use rounded separators
+    -- Make sure you have a Nerd Font installed for these icons to render correctly.
+    opts.options = {
+      theme = my_theme,
+      component_separators = { left = "", right = "" }, -- Softer inner separators
+      section_separators = { left = "", right = "" }, -- Rounded-edge separators
+      disabled_filetypes = { statusline = {}, winbar = {} },
+      always_divide_middle = true,
+    }
 
-  -- change trouble config
-  {
-    "folke/trouble.nvim",
-    -- opts will be merged with the parent spec
-    opts = { use_diagnostic_signs = true },
-  },
+    -- 3. Configure sections to remove command display and add the colored path
+    -- Left Side
+    opts.sections.lualine_a = { "mode" }
+    opts.sections.lualine_b = { "branch" }
 
-  -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
-
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
-
-  -- change some telescope options and a keymap to browse plugin files
-  {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      -- add a keymap to browse plugin files
-      -- stylua: ignore
+    -- Center Section with colored background and relative file path
+    opts.sections.lualine_c = {
       {
-        "<leader>fp",
-        function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end,
-        desc = "Find Plugin File",
+        "filename",
+        path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+        shorting_rule = "winwidth",
       },
-    },
-    -- change some options
-    opts = {
-      defaults = {
-        layout_strategy = "horizontal",
-        layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
-        winblend = 0,
-      },
-    },
-  },
+    }
 
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
+    -- Right Side: We keep some useful info but remove the command display and percentage
+    opts.sections.lualine_x = { "diagnostics", "filetype" }
+    opts.sections.lualine_y = {} -- Ensure percentage is removed
+    opts.sections.lualine_z = { "location" } -- Line and column number
 
-  -- add tsserver and setup with typescript.nvim instead of lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "jose-elias-alvarez/typescript.nvim",
-      init = function()
-        require("lazyvim.util").lsp.on_attach(function(_, buffer)
-          -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
-          vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
-        end)
-      end,
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- tsserver will be automatically installed with mason and loaded with lspconfig
-        tsserver = {},
-      },
-      -- you can do any additional lsp server setup here
-      -- return true if you don't want this server to be setup with lspconfig
-      ---@type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-      setup = {
-        -- example to setup with typescript.nvim
-        tsserver = function(_, opts)
-          require("typescript").setup({ server = opts })
-          return true
-        end,
-        -- Specify * to use this function as a fallback for any server
-        -- ["*"] = function(server, opts) end,
-      },
-    },
-  },
+    -- Configure inactive windows similarly
+    opts.inactive_sections.lualine_c = { { "filename", path = 1 } }
 
-  -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
-  -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-
-  -- add more treesitter parsers
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "bash",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
-      },
-    },
-  },
-
-  -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
-  -- would overwrite `ensure_installed` with the new value.
-  -- If you'd rather extend the default config, use the code below instead:
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
-      })
-    end,
-  },
-
-  -- the opts function can also be used to change the default opts:
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function(_, opts)
-      table.insert(opts.sections.lualine_x, {
-        function()
-          return "😄"
-        end,
-      })
-    end,
-  },
-
-  -- or you can return new options to override all the defaults
-  {
-    "nvim-lualine/lualine.nvim",
-    event = "VeryLazy",
-    opts = function()
-      return {
-        --[[add your custom lualine config here]]
-      }
-    end,
-  },
-
-  -- use mini.starter instead of alpha
-  { import = "lazyvim.plugins.extras.ui.mini-starter" },
-
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
-
-  -- add any tools you want to have installed below
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-      },
-    },
-  },
+    return opts
+  end,
 }
