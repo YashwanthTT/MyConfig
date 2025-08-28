@@ -53,7 +53,7 @@ keybinds clear-defaults=true {
         bind "s" { ToggleActiveSyncTab; SwitchToMode "normal"; }
         bind "Alt o" { SwitchToMode "normal"; }
         bind "x" { CloseTab; SwitchToMode "normal"; }
-        bind "tab" { ToggleTab; }
+        // bind "tab" { ToggleTab; }
     }
     resize {
         bind "left" { Resize "Increase left"; }
@@ -137,15 +137,15 @@ keybinds clear-defaults=true {
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt =" { Resize "Increase"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
+        // bind "Alt [" { PreviousSwapLayout; }
+        // bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Ctrl h" { MoveFocusOrTab "left"; }
+        bind "Alt [" { MoveFocusOrTab "left"; }
         bind "Alt i" { MoveTab "left"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
+        bind "Alt ]" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Ctrl o" { MoveTab "right"; }
         bind "Alt q" { Quit; }
