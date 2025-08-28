@@ -129,7 +129,16 @@ return {
           lualine_b = { "branch" },
           lualine_c = {
             "diagnostics",
-            { "filename", path = 1 }, -- relative path
+            {
+              "filename",
+              path = 1,
+              symbols = {
+                modified = "",
+                readonly = "[-]",
+                unnamed = "[No Name]",
+                newfile = "[New]",
+              },
+            }, -- relative path
           },
           lualine_x = { "filetype" },
           lualine_y = { "progress" },
