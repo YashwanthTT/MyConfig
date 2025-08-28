@@ -4,7 +4,7 @@
 
 keybinds clear-defaults=true {
     locked {
-        bind "Ctrl g" { SwitchToMode "normal"; }
+        bind "Alt g" { SwitchToMode "normal"; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -154,7 +154,7 @@ keybinds clear-defaults=true {
         bind "Ctrl h" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
-        bind "Ctrl o" { SwitchToMode "session"; }
+        bind "Alt o" { SwitchToMode "session"; }
     }
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl b" { SwitchToMode "tmux"; }
@@ -268,7 +268,7 @@ load_plugins {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -292,7 +292,9 @@ load_plugins {
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-// default_layout "compact"
+// layout_dir "/home/yashwanth/.config/zellij/layouts"
+layout_dir "/Users/yashwanth/.config/zellij/layouts"
+default_layout "custom"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
@@ -318,7 +320,7 @@ load_plugins {
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)
@@ -408,7 +410,7 @@ session_serialization false
 //   - true
 //   - false (default)
 // 
-// serialize_pane_viewport false
+serialize_pane_viewport true
  
 // Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
 // defaults to the scrollback size. If this number is higher than the scrollback size, it will
@@ -444,6 +446,7 @@ session_serialization false
 // Default: true
 // 
 // stacked_resize false
+//
  
 // Whether to show tips on startup
 // Default: true
