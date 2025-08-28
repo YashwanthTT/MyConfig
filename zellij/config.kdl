@@ -131,8 +131,8 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" {
         bind "Alt left" { MoveFocusOrTab "left"; }
-        bind "Alt down" { MoveFocus "down"; }
-        bind "Alt up" { MoveFocus "up"; }
+        bind "Ctrl j" { MoveFocus "down"; }
+        bind "Ctrl k" { MoveFocus "up"; }
         bind "Alt right" { MoveFocusOrTab "right"; }
         bind "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
@@ -142,9 +142,9 @@ keybinds clear-defaults=true {
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Alt [" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
+        bind "Ctrl i" { MoveTab "left"; }
+        bind "Ctrl h" { MoveFocus "left"; }
+        bind "Ctrl l" { MoveFocus "right"; }
         bind "Alt ]" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Ctrl o" { MoveTab "right"; }
@@ -160,7 +160,7 @@ keybinds clear-defaults=true {
         bind "Alt b" { SwitchToMode "tmux"; }
     }
     shared_except "locked" "scroll" "search" {
-        bind "Ctrl s" { SwitchToMode "scroll"; }
+        bind "Alt s" { SwitchToMode "scroll"; }
     }
     shared_except "locked" "tab" {
         bind "Alt o" { SwitchToMode "tab"; }
@@ -169,7 +169,7 @@ keybinds clear-defaults=true {
         bind "Alt p" { SwitchToMode "pane"; }
     }
     shared_except "locked" "resize" {
-        bind "Ctrl n" { SwitchToMode "resize"; }
+        bind "Alt n" { SwitchToMode "resize"; }
     }
     shared_except "normal" "locked" "entersearch" {
         bind "enter" { SwitchToMode "normal"; }
