@@ -21,5 +21,6 @@ startup_mode = "Maximized"
 
 [font]
 
-normal.family = "meslolgs nerd font mono"
+normal.family = "JetBrainsMono Nerd Font Mono"
+# normal.family = "meslolgs nerd font mono"
 size = 18
