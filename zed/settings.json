@@ -254,7 +254,7 @@
   "file_scan_inclusions": [".env"],
   // Move all panel to the right
   "project_panel": {
-    "button": false,
+    "button": true,
     "default_width": 300,
     "dock": "left",
     "file_icons": true,
@@ -266,11 +266,11 @@
   },
   "outline_panel": {
     "dock": "right",
-    "button": false
+    "button": true
   },
   "collaboration_panel": {
     "dock": "left",
-    "button": false
+    "button": true
   },
   "chat_panel": {
     "dock": "right"

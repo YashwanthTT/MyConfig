@@ -114,13 +114,13 @@
 			"cmd-l": "assistant::InlineAssist",
 			"space a t": "workspace::ToggleRightDock",
 			// Git
-			"space g g": [
-				"task::Spawn",
-				{
-					"task_name": "lazygit",
-					"reveal_target": "center"
-				}
-			],
+			// "space g g": [
+			// 	"task::Spawn",
+			// 	{
+			// 		"task_name": "lazygit",
+			// 		"reveal_target": "center"
+			// 	}
+			// ],
 			"space g h d": "editor::ExpandAllDiffHunks",
 			"space g h D": "git::Diff",
 			"space g h r": "git::Restore",
@@ -176,12 +176,15 @@
 			// Format
 			"space c f": "editor::Format",
 			// File explorer
-			"space e": "workspace::ToggleLeftDock",
+			// "space e": "workspace::ToggleLeftDock",
+			"space e": "project_panel::ToggleFocus",
+			"space g g": "git_panel::ToggleFocus",
+
 			// Telescope
 			"space f f": "file_finder::Toggle",
 			"space space": "file_finder::Toggle",
 			// Quit zed
-			"space q q": "zed::Quit",
+			"space q a": "zed::Quit",
 			// Terminal
 			"space t": "workspace::ToggleBottomDock",
 			// Windows management
