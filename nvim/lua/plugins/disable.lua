@@ -1,4 +1,9 @@
 return {
+  {
+    "folke/which-key.nvim",
+    enabled = false, -- disables the which-key popup entirely
+    -- enabled = true, -- enables the which-key popup entirely
+  },
   -- Disable snacks.nvim notifications
   {
     "folke/snacks.nvim",
@@ -27,6 +32,17 @@ return {
         -- For example, to close all notifications immediately (comment out if not desired)
         -- vim.api.nvim_win_close(win, true)
       end,
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        pyright = {
+          mason = false,
+          autostart = false,
+        },
+      },
     },
   },
 }
