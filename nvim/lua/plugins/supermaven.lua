@@ -8,7 +8,7 @@ return {
       accept_word = "<C-j>",
     },
     color = {
-      suggestion_color = "#ffffff",
+      suggestion_color = "#808080",
       cterm = 244,
     },
     disable_inline_completion = false, -- IMPORTANT: enables ghost text

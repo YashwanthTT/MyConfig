@@ -1,7 +1,7 @@
-general.import = [
-    "~/.config/alacritty/themes/themes/coolnight.toml"
-]
-
+# general.import = [
+#     "~/.config/alacritty/themes/themes/carbonfox.toml"
+# ]
+#
 
 [colors]
 
