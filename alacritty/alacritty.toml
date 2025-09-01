@@ -1,12 +1,12 @@
-# general.import = [
-#     "~/.config/alacritty/themes/themes/carbonfox.toml"
-# ]
+general.import = [
+    "~/.config/alacritty/themes/themes/carbonfox.toml"
+]
+
+
+# [colors]
 #
-
-[colors]
-
-primary = { background = "#000000", foreground = "#d8d8d8" }
-
+# primary = { background = "#000000", foreground = "#d8d8d8" }
+#
 
 [window]
 
