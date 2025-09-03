@@ -2,4 +2,5 @@ zed/prompts/prompts-library-db.0.mdb
 raycast
 raycast/extensions
 .DS_Store
-
+/fish
+/opencode

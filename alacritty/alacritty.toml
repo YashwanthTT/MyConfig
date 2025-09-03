@@ -1,12 +1,12 @@
 general.import = [
-    "~/.config/alacritty/themes/themes/carbonfox.toml"
+    "~/.config/alacritty/themes/themes/moonfly.toml"
 ]
 
 
 # [colors]
 #
-# primary = { background = "#000000", foreground = "#d8d8d8" }
-
+# primary = { background = "#08080B", foreground = "#d8d8d8" }
+#
 
 [window]
 
