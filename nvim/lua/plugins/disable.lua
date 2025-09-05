@@ -45,4 +45,13 @@ return {
       },
     },
   },
+  {
+    "saghen/blink.cmp",
+    opts = function(_, opts)
+      opts.completion = opts.completion or {}
+      -- Disable ghost text (the inline ghost suggestion)
+      opts.completion.ghost_text = { enabled = false }
+      return opts
+    end,
+  },
 }
