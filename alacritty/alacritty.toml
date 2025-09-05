@@ -1,5 +1,5 @@
 general.import = [
-    "~/.config/alacritty/themes/themes/moonfly.toml"
+    "~/.config/alacritty/themes/moonfly.toml"
 ]
 
 
