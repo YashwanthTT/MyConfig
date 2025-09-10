@@ -1,6 +1,8 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.supermaven",
+    "lazyvim.plugins.extras.coding.mini-snippets",
+    "lazyvim.plugins.extras.editor.refactoring",
     "lazyvim.plugins.extras.editor.telescope",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.git",
