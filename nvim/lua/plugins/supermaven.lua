@@ -12,7 +12,7 @@ return {
       },
       color = {
         suggestion_color = "#808080",
-        -- suggestion_color = "#C0C0C0",
+        -- suggestion_color = "#C0C0C0"
         cterm = 250,
       },
       disable_inline_completion = false, -- IMPORTANT: enables ghost text
