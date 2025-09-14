@@ -9,7 +9,6 @@ general.import = [
 #
 
 [window]
-
 padding.x = 8
 padding.y = 3
 decorations = "buttonless"
@@ -18,9 +17,8 @@ decorations = "buttonless"
 option_as_alt = "both"
 startup_mode = "Maximized"
 
-
 [font]
-
 normal.family = "JetBrainsMono Nerd Font Mono"
 # normal.family = "meslolgs nerd font mono"
 size = 19
+
