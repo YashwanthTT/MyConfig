@@ -6,3 +6,4 @@ raycast/extensions
 /opencode
 /configstore
 configstore/update-notifier-@google
+# starship.toml
