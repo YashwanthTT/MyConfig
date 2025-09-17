@@ -49,8 +49,16 @@ return {
     "saghen/blink.cmp",
     opts = function(_, opts)
       opts.completion = opts.completion or {}
-      -- Disable ghost text (the inline ghost suggestion)
       opts.completion.ghost_text = { enabled = false }
+
+      -- Correct: use default array, not keys!
+      opts.sources = {
+        default = { "lsp", "path", "buffer" },
+      }
+
+      opts.cmdline = opts.cmdline or {}
+      opts.cmdline.enabled = false
+
       return opts
     end,
   },

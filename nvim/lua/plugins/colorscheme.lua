@@ -69,11 +69,19 @@ return {
       require("lualine").setup({
         options = {
           theme = my_theme,
-          component_separators = { left = "|", right = "|" },
+          -- component_separators = { left = "|", right = "|" },
+          component_separators = { left = " ", right = " " },
           section_separators = { left = "", right = "" }, -- Rounded
         },
         sections = {
-          lualine_a = { "mode" },
+          -- lualine_a = { { "mode", separator = { left = "" }, left_padding = 2 } },
+          lualine_a = {
+            {
+              "mode",
+              separator = { left = "" },
+              padding = { left = 0, right = 1 },
+            },
+          },
           lualine_b = { "branch" },
           lualine_c = {
             "diagnostics",
@@ -90,7 +98,7 @@ return {
           },
           lualine_x = { "filetype" },
           lualine_y = { "progress" },
-          lualine_z = { "location" },
+          lualine_z = { { "location", separator = { right = "" } } },
         },
         inactive_sections = {
           lualine_a = {},
