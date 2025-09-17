@@ -7,3 +7,4 @@ raycast/extensions
 /configstore
 configstore/update-notifier-@google
 # starship.toml
+/typy
