@@ -3,11 +3,11 @@
 -- Add any additional keymaps here
 --
 --
-vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Live preview replace" })
+vim.keymap.set("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Live preview replace" })
 
 vim.keymap.set(
   "v",
-  "<leader>r",
+  "<leader>rr",
   [[:s/\<<C-r><C-w>\>//g<Left><Left>]],
   { desc = "Replace word under cursor (selection)" }
 )
