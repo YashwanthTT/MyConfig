@@ -3,16 +3,17 @@ general.import = [
 ]
 
 
-# [colors]
+[colors]
 #
 # primary = { background = "#08080B", foreground = "#d8d8d8" }
-#
+primary = { background = "#202632", foreground = "#d8d8d8" }
 
 [window]
 padding.x = 8
 padding.y = 3
 decorations = "buttonless"
-opacity = 0.99
+# opacity = 0.99
+opacity = 0.97
 blur = true
 option_as_alt = "both"
 startup_mode = "Maximized"
