@@ -177,15 +177,6 @@ keybinds clear-defaults=true {
         bind "x" { CloseFocus; SwitchToMode "normal"; }
     }
     shared_among "scroll" "search" {
-        bind "Alt 1" { GoToTab 1; SwitchToMode "Normal"; }
-        bind "Alt 2" { GoToTab 2; SwitchToMode "Normal"; }
-        bind "Alt 3" { GoToTab 3; SwitchToMode "Normal"; }
-        bind "Alt 4" { GoToTab 4; SwitchToMode "Normal"; }
-        bind "Alt 5" { GoToTab 5; SwitchToMode "Normal"; }
-        bind "Alt 6" { GoToTab 6; SwitchToMode "Normal"; }
-        bind "Alt 7" { GoToTab 7; SwitchToMode "Normal"; }
-        bind "Alt 8" { GoToTab 8; SwitchToMode "Normal"; }
-        bind "Alt 9" { GoToTab 9; SwitchToMode "Normal"; }
         bind "PageDown" { PageScrollDown; }
         bind "PageUp" { PageScrollUp; }
         bind "left" { PageScrollUp; }
@@ -444,7 +435,7 @@ pane_frames false
 // (Requires restart)
 // Default: true (if the host terminal supports it)
 // 
-support_kitty_keyboard_protocol true
+// support_kitty_keyboard_protocol false
 // Whether to make sure a local web server is running when a new Zellij session starts.
 // This web server will allow creating new sessions and attaching to existing ones that have
 // opted in to being shared in the browser.
