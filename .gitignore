@@ -2,7 +2,7 @@ zed/prompts/prompts-library-db.0.mdb
 raycast
 raycast/extensions
 .DS_Store
-/fish
+# /fish
 /opencode
 /configstore
 configstore/update-notifier-@google
