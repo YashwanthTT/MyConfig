@@ -5,20 +5,6 @@
 //
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
-// [
-//   {
-//     "context": "Workspace",
-//     "bindings": {
-//       // "shift shift": "file_finder::Toggle"
-//     }
-//   },
-//   {
-//     "context": "Editor && vim_mode == insert",
-//     "bindings": {
-//       // "j k": "vim::NormalBefore"
-//     }
-//   }
-// ]
 [
 	// Terminal
 	{
@@ -113,19 +99,11 @@
 			"space a e": "assistant::InlineAssist",
 			"cmd-l": "assistant::InlineAssist",
 			"space a t": "workspace::ToggleRightDock",
-			// Git
-			// "space g g": [
-			// 	"task::Spawn",
-			// 	{
-			// 		"task_name": "lazygit",
-			// 		"reveal_target": "center"
-			// 	}
-			// ],
 			"space g h d": "editor::ExpandAllDiffHunks",
 			"space g h D": "git::Diff",
 			"space g h r": "git::Restore",
 			"space g h R": "git::RestoreFile",
-			// Toggle inlay hints
+			// Togglekinlay hints
 			"space u i": "editor::ToggleInlayHints",
 			// Toggle soft wrap
 			"space u w": "editor::ToggleSoftWrap",
