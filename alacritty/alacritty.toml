@@ -1,6 +1,6 @@
-# general.import = [
-#     "~/.config/alacritty/themes/moonfly.toml"
-# ]
+general.import = [
+    "~/.config/alacritty/themes/moonfly.toml"
+]
 
 
 [colors]
