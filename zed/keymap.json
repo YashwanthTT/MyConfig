@@ -84,7 +84,6 @@
 			// Search in all the files
 			"space s g": "workspace::NewSearch",
 			// Quit zed
-			"space q q": "zed::Quit"
 		}
 	},
 	{
