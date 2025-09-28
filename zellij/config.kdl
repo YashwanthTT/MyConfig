@@ -127,7 +127,7 @@ keybinds clear-defaults=true {
     }
     shared_except "locked" {
         bind "Alt 1" { GoToTab 1; SwitchToMode "normal"; }
-        bind "ALt 2" { GoToTab 2; SwitchToMode "normal"; }
+        bind "Alt 2" { GoToTab 2; SwitchToMode "normal"; }
         bind "Alt 3" { GoToTab 3; SwitchToMode "normal"; }
         bind "Alt 4" { GoToTab 4; SwitchToMode "normal"; }
         bind "Alt 5" { GoToTab 5; SwitchToMode "normal"; }
@@ -405,7 +405,7 @@ pane_frames false
 //   - true (default)
 //   - false
 // 
-// session_serialization false
+// session_serialization true
  
 // Whether pane viewports are serialized along with the session, default is false
 // Options:
