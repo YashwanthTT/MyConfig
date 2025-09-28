@@ -1,41 +1,36 @@
 {
   "profiles" : [
     {
-      "id" : "AECCA943-EDE9-45E6-B8AD-CF3BDDDA5F47",
+      "id" : "C8EC21E6-78B1-4D10-A782-1A3115F01D79",
       "name" : "Default",
       "workspaces" : [
         {
           "apps" : [
             {
-              "bundleIdentifier" : "com.apple.finder",
-              "iconPath" : "/System/Library/CoreServices/Finder.app/Contents/Resources/Finder.icns",
-              "name" : "Finder"
-            },
+              "bundleIdentifier" : "org.alacritty",
+              "iconPath" : "/Applications/Alacritty.app/Contents/Resources/alacritty.icns",
+              "name" : "Alacritty"
+            }
+          ],
+          "display" : "Built-in Retina Display",
+          "id" : "FC96D0C4-4C96-4B70-BD53-677D75693C48",
+          "name" : "Alacritty 1",
+          "openAppsOnActivation" : true,
+          "shortcut" : "cmd+ctrl+opt+1"
+        },
+        {
+          "apps" : [
             {
               "bundleIdentifier" : "org.alacritty",
               "iconPath" : "/Applications/Alacritty.app/Contents/Resources/alacritty.icns",
               "name" : "Alacritty"
-            },
-            {
-              "bundleIdentifier" : "net.imput.helium",
-              "iconPath" : "/Applications/Helium.app/Contents/Resources/app.icns",
-              "name" : "Helium"
             }
           ],
-          "assignAppShortcut" : "opt+2",
           "display" : "Built-in Retina Display",
-          "id" : "C02FC5E6-89D2-409D-83EE-75E55B2AC9E9",
-          "name" : "Coding",
-          "openAppsOnActivation" : false,
-          "shortcut" : "opt+1"
-        },
-        {
-          "apps" : [
-
-          ],
-          "display" : "Built-in Retina Display",
-          "id" : "B3B40E1D-D976-4839-93D3-D19BD84A7135",
-          "name" : "server"
+          "id" : "6B8ECAE2-7615-40B9-83DB-8E360E7AB95F",
+          "name" : "Alacritty 2",
+          "openAppsOnActivation" : true,
+          "shortcut" : "cmd+ctrl+opt+2"
         }
       ]
     }
