@@ -126,14 +126,14 @@ layout {
                 mode_tmux          "#[fg=#f5a97f]#[bg=#f5a97f,fg=#181926,bold]TMUX#[,fg=#f5a97f]"
 
                 // formatting for inactive tabs
-                tab_normal              "#,fg=#8bd5ca]#[bg=#8bd5ca,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#8bd5ca,bold] {name}{floating_indicator}#[,fg=#363a4f,bold]"
-                tab_normal_fullscreen   "#,fg=#8bd5ca]#[bg=#8bd5ca,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#8bd5ca,bold] {name}{fullscreen_indicator}#[,fg=#363a4f,bold]"
-                tab_normal_sync         "#,fg=#8bd5ca]#[bg=#8bd5ca,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#8bd5ca,bold] {name}{sync_indicator}#[,fg=#363a4f,bold]"
+                tab_normal              "#,fg=#6c7086]#[bg=#6c7086,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#6c7086,bold] {name}{floating_indicator}#[,fg=#363a4f,bold]"
+                tab_normal_fullscreen   "#,fg=#6c7086]#[bg=#6c7086,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#6c7086,bold] {name}{fullscreen_indicator}#[,fg=#363a4f,bold]"
+                tab_normal_sync         "#,fg=#6c7086]#[bg=#6c7086,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#6c7086,bold] {name}{sync_indicator}#[,fg=#363a4f,bold]"
 
                 // formatting for the current active tab
-                tab_active              "#,fg=#eed49f]#[bg=#eed49f,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{floating_indicator}#[,fg=#363a4f,bold]"
-                tab_active_fullscreen   "#,fg=#eed49f]#[bg=#eed49f,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{fullscreen_indicator}#[,fg=#363a4f,bold]"
-                tab_active_sync         "#,fg=#eed49f]#[bg=#eed49f,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#eed49f,bold] {name}{sync_indicator}#[,fg=#363a4f,bold]"
+                tab_active              "#,fg=#d0d0d0]#[bg=#d0d0d0,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#d0d0d0,bold] {name}{floating_indicator}#[,fg=#363a4f,bold]"
+                tab_active_fullscreen   "#,fg=#d0d0d0]#[bg=#d0d0d0,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#d0d0d0,bold] {name}{fullscreen_indicator}#[,fg=#363a4f,bold]"
+                tab_active_sync         "#,fg=#d0d0d0]#[bg=#d0d0d0,fg=#1e2030,bold]{index} #[bg=#363a4f,fg=#d0d0d0,bold] {name}{sync_indicator}#[,fg=#363a4f,bold]"
 
 
 
