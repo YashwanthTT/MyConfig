@@ -93,10 +93,10 @@ layout {
     default_tab_template {
         pane size=1 borderless=true {
             plugin location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm" {
-                format_left   "{mode}"
+                // format_left   "{mode}"
                 format_center "{tabs}"
 
-                format_right "#[fg=#6699cc,]#[bg=#6699cc,bold] #[bg=#383838,fg=#d8d8d8,bold] {session}#[fg=#383838]"
+                // format_right "#[fg=#6699cc,]#[bg=#6699cc,bold] #[bg=#383838,fg=#d8d8d8,bold] {session}#[fg=#383838]"
 
                 format_space  ""
                 format_hide_on_overlength "true"
