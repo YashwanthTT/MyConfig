@@ -7,3 +7,5 @@ local opt = vim.opt
 -- Increase leader‐key mapping wait time
 opt.timeoutlen = 1500
 opt.ttimeoutlen = 100
+
+-- vim.opt.swapfile = false
