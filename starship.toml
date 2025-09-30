@@ -36,6 +36,6 @@ format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
 [time]
 disabled = false
 use_12hr = true
-time_format = "%I:%M"
+time_format = "%I:%M:%p"
 style = "bg:#1d2230"
 format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'

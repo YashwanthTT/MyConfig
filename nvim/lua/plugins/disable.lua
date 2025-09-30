@@ -62,4 +62,8 @@ return {
       return opts
     end,
   },
+  {
+    "akinsho/bufferline.nvim",
+    enabled = false,
+  },
 }
