@@ -1,4 +1,3 @@
-zed/prompts/prompts-library-db.0.mdb
 raycast
 raycast/extensions
 .DS_Store
@@ -7,4 +6,3 @@ raycast/extensions
 /configstore
 configstore/update-notifier-@google
 /typy
-/zed
