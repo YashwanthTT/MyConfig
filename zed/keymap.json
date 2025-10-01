@@ -87,6 +87,8 @@
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
+      // Write ri
+      "space w w": "workspace::Save",
       // Open file finder
       "space space": "file_finder::Toggle",
       // New file
