@@ -4,6 +4,9 @@
     "lazyvim.plugins.extras.editor.refactoring",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.clangd",
+    "lazyvim.plugins.extras.lang.git",
+    "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "install_version": 8,
