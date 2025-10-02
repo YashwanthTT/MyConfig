@@ -3,6 +3,16 @@ return {
   lazy = true,
   keys = {
     {
+      "<space><space>",
+      function()
+        require("telescope.builtin").find_files({
+          cmd = vim.loop.cwd(),
+        })
+      end,
+      desc = "Telescope: Find files in current directory",
+      mode = "n",
+    },
+    {
       "<space>:",
       function()
         require("telescope.builtin").command_history()
