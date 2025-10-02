@@ -8,4 +8,4 @@ local opt = vim.opt
 opt.timeoutlen = 1500
 opt.ttimeoutlen = 100
 
--- vim.opt.swapfile = false
+vim.opt.swapfile = false
