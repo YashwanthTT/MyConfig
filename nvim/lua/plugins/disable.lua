@@ -4,14 +4,13 @@ return {
     enabled = false, -- disables the which-key popup entirely
     -- enabled = true, -- enables the which-key popup entirely
   },
-   -- Disable snacks.nvim notifications and picker
-   {
-     "folke/snacks.nvim",
-     opts = {
-       notifier = { enabled = false },
-       picker = { enabled = false },
-     },
-   },
+  -- Disable snacks.nvim notifications and picker
+  {
+    "folke/snacks.nvim",
+    opts = {
+      notifier = { enabled = false },
+    },
+  },
 
   -- Disable notifications in noice.nvim
   {

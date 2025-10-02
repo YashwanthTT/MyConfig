@@ -15,9 +15,8 @@ return {
       },
     },
   },
-
   {
-    "echasnovski/mini.snippets",
+    "nvim-mini/mini.snippets",
     config = function()
       require("mini.snippets").setup({
         mappings = {
