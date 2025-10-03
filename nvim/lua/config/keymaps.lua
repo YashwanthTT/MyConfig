@@ -14,3 +14,11 @@ vim.keymap.set(
 vim.keymap.set("n", "<leader>ww", function()
   vim.cmd("write")
 end)
+
+local harpoon = require("harpoon")
+
+harpoon:setup()
+
+vim.keymap.set("n", "<leader>a", function()
+  harpoon:list():add()
+end)

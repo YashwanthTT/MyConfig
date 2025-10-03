@@ -1,6 +1,7 @@
 {
   "extras": [
     "lazyvim.plugins.extras.coding.mini-snippets",
+    "lazyvim.plugins.extras.editor.harpoon2",
     "lazyvim.plugins.extras.editor.refactoring",
     "lazyvim.plugins.extras.formatting.prettier",
     "lazyvim.plugins.extras.lang.clangd",
@@ -15,4 +16,3 @@
   },
   "version": 8
 }
-
