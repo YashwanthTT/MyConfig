@@ -6,7 +6,7 @@ general.import = [
 [colors]
 #
 # primary = { background = "#08080B", foreground = "#d8d8d8" }
-primary = { background = "#202632", foreground = "#d8d8d8" }
+# primary = { background = "#202632", foreground = "#d8d8d8" }
 
 [window]
 padding.x = 3
