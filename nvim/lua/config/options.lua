@@ -11,4 +11,3 @@ opt.ttimeoutlen = 100
 vim.opt.swapfile = false
 
 vim.o.winborder = "rounded"
-

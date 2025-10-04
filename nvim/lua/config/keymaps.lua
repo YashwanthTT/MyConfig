@@ -11,7 +11,7 @@ vim.keymap.set(
   { desc = "Replace word under cursor (selection)" }
 )
 
-vim.keymap.set("n", "<leader>ww", function()
+vim.keymap.set("n", "<leader>w", function()
   vim.cmd("write")
 end)
 
