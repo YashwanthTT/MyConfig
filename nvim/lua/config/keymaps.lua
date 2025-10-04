@@ -15,5 +15,5 @@ vim.keymap.set("n", "<leader>ww", function()
   vim.cmd("write")
 end)
 
--- vim.keymap.set({ "n", "v", "x" }, ";", ":")
--- vim.keymap.set({ "n", "v", "x" }, ":", ";")
+vim.keymap.set({ "n", "v", "x" }, ";", ":")
+vim.keymap.set({ "n", "v", "x" }, ":", ";")
