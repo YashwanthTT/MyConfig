@@ -9,8 +9,8 @@ general.import = [
 # primary = { background = "#202632", foreground = "#d8d8d8" }
 
 [window]
-padding.x = 3
-padding.y = 2
+# padding.x = 1
+# padding.y = 1
 decorations = "buttonless"
 # opacity = 0.99
 opacity = 0.95
@@ -21,5 +21,5 @@ startup_mode = "Maximized"
 [font]
 normal.family = "JetBrainsMono Nerd Font Mono"
 # normal.family = "meslolgs nerd font mono"
-size = 19
+size = 18
 

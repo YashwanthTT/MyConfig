@@ -49,11 +49,6 @@
     },
     "enabled_in_text_threads": false
   },
-  "icon_theme": "Catppuccin Mocha",
-  "notification_panel": {
-    "enabled": true,
-    "button": false
-  },
   "agent": {
     "default_profile": "write",
     "default_model": {
