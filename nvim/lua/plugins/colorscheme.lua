@@ -78,8 +78,8 @@ return {
           lualine_a = {
             {
               "mode",
-              separator = { left = "" },
-              padding = { left = 0, right = 1 },
+              -- separator = { left = "" },
+              padding = { left = 1, right = 1 },
             },
           },
           lualine_b = { "branch" },
@@ -98,7 +98,12 @@ return {
           },
           lualine_x = { "filetype" },
           lualine_y = { "progress" },
-          lualine_z = { { "location", separator = { right = "" } } },
+          lualine_z = {
+            {
+              "location",
+              -- separator = { right = "" }
+            },
+          },
         },
         inactive_sections = {
           lualine_a = {},
