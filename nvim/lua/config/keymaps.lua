@@ -17,3 +17,5 @@ end)
 
 vim.keymap.set({ "n", "v", "x" }, ";", ":")
 vim.keymap.set({ "n", "v", "x" }, ":", ";")
+
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
