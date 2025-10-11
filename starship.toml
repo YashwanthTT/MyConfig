@@ -5,10 +5,11 @@ format = """
 $directory\
 [](fg:#769ff0 bg:#394260)\
 $git_branch\
-[](fg:#394260 bg:#1d2230)\
+[](fg:#394260 )\
 \n$character"""
 
 # $time\
+# bg:#1d2230
 # $git_status\
 # [ ](fg:#1d2230)
 
