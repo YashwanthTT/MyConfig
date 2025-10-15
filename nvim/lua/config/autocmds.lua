@@ -41,6 +41,14 @@ vim.keymap.set("n", "<leader>z", function()
   elseif vim.o.filetype == "lua" then
     command = command .. vim.fn.expand("lua ")
     command = command .. source_file
+  elseif vim.o.filetype == "java" then
+    local class_file = vim.fn.expand("%:p:r") .. ".class"
+    command = command .. vim.fn.expand("javac ")
+    command = command .. source_file
+    command = command .. vim.fn.expand(" && java -cp ")
+    command = command .. vim.fn.expand("%:p:h")
+    command = command .. vim.fn.expand(" ")
+    command = command .. vim.fn.expand("%:t:r")
   else
     print("Unknown file type `" .. vim.o.filetype .. "`")
   end
