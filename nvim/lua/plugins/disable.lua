@@ -1,8 +1,15 @@
 return {
   {
     "folke/which-key.nvim",
-    enabled = false, -- disables the which-key popup entirely
-    -- enabled = true, -- enables the which-key popup entirely
+    enabled = false,
+    -- enabled = true,
+    -- opts = {
+    --   preset = "classic",
+    --   notify = false,
+    --   show_help = false,
+    --   show_keys = false,
+    --   triggers = {},
+    -- },
   },
   -- Disable snacks.nvim notifications and picker
   {
