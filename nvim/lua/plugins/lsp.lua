@@ -30,7 +30,7 @@ return {
   --     })
   --
   --     -- Diagnostic signs
-  --     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+  --     local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
   --     for type, icon in pairs(signs) do
   --       local hl = "DiagnosticSign" .. type
   --       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -53,4 +53,52 @@ return {
   --     })
   --   end,
   -- },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        jdtls = {},
+      },
+    },
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+    ft = { "java" },
+    opts = function()
+      return {
+        cmd = {
+          "jdtls",
+        },
+        root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }),
+        settings = {
+          java = {
+            signatureHelp = { enabled = true },
+            contentProvider = { preferred = "fernflower" },
+            completion = {
+              favoriteStaticMembers = {
+                "org.junit.jupiter.api.Assertions.*",
+                "org.junit.Assert.*",
+                "org.mockito.Mockito.*",
+              },
+            },
+            sources = {
+              organizeImports = {
+                starThreshold = 9999,
+                staticStarThreshold = 9999,
+              },
+            },
+          },
+        },
+      }
+    end,
+    config = function(_, opts)
+      local jdtls = require("jdtls")
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "java",
+        callback = function()
+          jdtls.start_or_attach(opts)
+        end,
+      })
+    end,
+  },
 }
