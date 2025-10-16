@@ -12,4 +12,9 @@ vim.opt.swapfile = false
 
 vim.o.winborder = "rounded"
 
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = "auto"
+
+for _, type in ipairs({ "Error", "Warn", "Info", "Hint" }) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = "", texthl = hl, numhl = "" })
+end

@@ -56,6 +56,12 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      diagnostics = {
+        signs = false,
+        virtual_text = { prefix = "●" },
+        underline = true,
+        severity_sort = true,
+      },
       servers = {
         jdtls = {},
       },
@@ -99,6 +105,11 @@ return {
           jdtls.start_or_attach(opts)
         end,
       })
+
+      vim.keymap.set("n", "<leader>us", function()
+        local cfg = vim.diagnostic.config()
+        vim.diagnostic.config({ signs = not cfg.signs })
+      end, { desc = "Toggle diagnostic signs" })
     end,
   },
 }
