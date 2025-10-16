@@ -53,7 +53,7 @@
     "default_profile": "write",
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "model": "grok-code-fast-1"
     }
   },
   "show_edit_predictions": true,
