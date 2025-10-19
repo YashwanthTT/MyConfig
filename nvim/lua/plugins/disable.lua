@@ -1,8 +1,8 @@
 return {
   {
     "folke/which-key.nvim",
-    enabled = false,
-    -- enabled = true,
+    -- enabled = false,
+    enabled = true,
     -- opts = {
     --   preset = "classic",
     --   notify = false,
