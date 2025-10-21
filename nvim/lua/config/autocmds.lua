@@ -38,6 +38,9 @@ vim.keymap.set("n", "<leader>z", function()
   elseif vim.o.filetype == "javascript" then
     command = command .. vim.fn.expand("bun ")
     command = command .. source_file
+  elseif vim.o.filetype == "typescript" then
+    command = command .. vim.fn.expand("bun ")
+    command = command .. source_file
   elseif vim.o.filetype == "python" then
     command = command .. vim.fn.expand("python3 ")
     command = command .. source_file
