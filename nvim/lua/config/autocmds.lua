@@ -35,6 +35,9 @@ vim.keymap.set("n", "<leader>z", function()
     command = command .. executable_file
   elseif string.match(vim.fn.getline(1), "^#!/") then
     command = command .. vim.fn.shellescape(source_file)
+  elseif vim.o.filetype == "javascript" then
+    command = command .. vim.fn.expand("bun ")
+    command = command .. source_file
   elseif vim.o.filetype == "python" then
     command = command .. vim.fn.expand("python3 ")
     command = command .. source_file
