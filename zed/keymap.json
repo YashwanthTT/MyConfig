@@ -239,5 +239,17 @@
     "bindings": {
       "b": "vim::AnyBrackets"
     }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-p": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-p": "command_palette::Toggle"
+    }
   }
 ]
