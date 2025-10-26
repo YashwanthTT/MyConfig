@@ -64,6 +64,16 @@ return {
       },
       servers = {
         jdtls = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pyflakes = { enabled = false },
+                ruff = { enabled = true },
+              },
+            },
+          },
+        },
       },
     },
   },
