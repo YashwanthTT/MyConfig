@@ -187,6 +187,7 @@
     "coloring": "indent_aware"
   },
   "terminal": {
+    "dock": "bottom",
     "env": {
       "EDITOR": "zed --wait"
     },

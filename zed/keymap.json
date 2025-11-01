@@ -63,7 +63,7 @@
       // Close project panel as project file panel on the right
       "q": "workspace::ToggleLeftDock",
       "space e": "workspace::ToggleLeftDock",
-      ":": "command_palette::Toggle",
+      ";": "command_palette::Toggle",
       "%": "project_panel::NewFile",
       "/": "project_panel::NewSearchInDirectory",
       "enter": "project_panel::OpenPermanent",
@@ -103,6 +103,8 @@
   {
     "context": "Editor && VimControl && !VimWaiting && !menu",
     "bindings": {
+      // Command palette
+      ";": "command_palette::Toggle",
       // Refactoring
       "space c r ": "editor::Rename",
       // Chat with AI
