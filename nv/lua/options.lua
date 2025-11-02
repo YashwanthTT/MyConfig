@@ -23,5 +23,3 @@ vim.g.autoformat = true
 vim.diagnostic.config({
   signs = false,
 })
-
-

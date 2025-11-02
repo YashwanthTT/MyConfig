@@ -11,11 +11,12 @@ return {
        require('mini.starter').setup({
          items = {
            require('mini.starter').sections.recent_files(5, true),
-           require('mini.starter').sections.builtin_actions(),
+           { name = 'Lazy', action = 'Lazy', section = 'Actions' },
+           { name = 'Quit', action = 'qa', section = 'Actions' },
          },
          content_hooks = {
            require('mini.starter').gen_hook.adding_bullet(),
-           require('mini.starter').gen_hook.indexing('all', { 'Builtin actions' }),
+           require('mini.starter').gen_hook.indexing('all', { 'Actions' }),
            require('mini.starter').gen_hook.padding(3, 2),
            require('mini.starter').gen_hook.aligning('center', 'center'),
          },
