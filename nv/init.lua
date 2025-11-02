@@ -24,6 +24,6 @@ require("lazy").setup({
 	require("plugins.blink"),
 	require("plugins.noice"),
 	require("plugins.copilot"),
-	require("plugins.lazygit"),
 	require("plugins.undotree"),
+	require("plugins.snacks"),
 })
