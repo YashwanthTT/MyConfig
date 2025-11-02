@@ -8,7 +8,20 @@ return {
       require('mini.comment').setup({})
       require('mini.pairs').setup({})
       require('mini.surround').setup({})
-      require('mini.starter').setup({})
+       require('mini.starter').setup({
+         items = {
+           require('mini.starter').sections.recent_files(5, true),
+           require('mini.starter').sections.builtin_actions(),
+         },
+         content_hooks = {
+           require('mini.starter').gen_hook.adding_bullet(),
+           require('mini.starter').gen_hook.indexing('all', { 'Builtin actions' }),
+           require('mini.starter').gen_hook.padding(3, 2),
+           require('mini.starter').gen_hook.aligning('center', 'center'),
+         },
+         footer = '',
+         header = '',
+       })
       require('mini.pairs').setup({})
       require('mini.icons').setup({})
     end,
