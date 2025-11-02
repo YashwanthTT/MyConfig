@@ -37,5 +37,6 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<CR>", { desc = "Files" })
 vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<CR>", { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fg", "<cmd>Pick grep_live<CR>", { desc = "Live Grep" })
 
--- Lazygit 
+-- Lazygit
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Lazygit" })
+
