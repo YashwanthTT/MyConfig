@@ -17,6 +17,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.iskeyword:append("-")
 vim.opt.mouse = "a"
+vim.opt.winborder = "rounded"
+vim.g.autoformat = true
 
 vim.diagnostic.config({
   signs = false,

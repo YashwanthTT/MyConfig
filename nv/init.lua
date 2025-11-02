@@ -26,4 +26,5 @@ require("lazy").setup({
 	require("plugins.copilot"),
 	require("plugins.undotree"),
 	require("plugins.snacks"),
+	require("plugins.format"),
 })
