@@ -1,13 +1,29 @@
 return {
-{
   "jiaoshijie/undotree",
-  ---@module 'undotree.collector'
-  ---@type UndoTreeCollector.Opts
-  opts = {
-    -- your options
-  },
-  keys = { -- load the plugin only when using it's keybinding:
-    { "<leader>t", "<cmd>lua require('undotree').toggle()<cr>" },
-  },
-}
+  config = function()
+    require("undotree").setup({
+      float_diff = true,
+      layout = "left_bottom",
+      position = "left",
+      ignore_filetype = { "undotree", "undotreeDiff", "qf" },
+      window = {
+        winblend = 30,
+        border = "rounded",
+      },
+      keymaps = {
+        j = "move_next",
+        k = "move_prev",
+        gj = "move2parent",
+        J = "move_change_next",
+        K = "move_change_prev",
+        ["<cr>"] = "action_enter",
+        p = "enter_diffbuf",
+        q = "quit",
+      },
+    })
+
+    vim.keymap.set("n", "<leader>tu", function()
+      require("undotree").toggle()
+    end, { noremap = true, silent = true })
+  end,
 }
