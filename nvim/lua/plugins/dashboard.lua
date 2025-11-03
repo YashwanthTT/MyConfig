@@ -26,13 +26,19 @@ return {
   {
     "nvim-mini/mini.nvim",
     version = "*",
-    config = function()
-      require("mini.starter").setup({
-        items = {
-          require("mini.starter").sections.recent_files(5, true),
-          { name = "Lazy", action = "Lazy", section = "Actions" },
-          { name = "Quit", action = "qa", section = "Actions" },
-        },
+     config = function()
+       require("mini.starter").setup({
+         items = {
+           function()
+             local recent_files = require("mini.starter").sections.recent_files(5, false, false)()
+             for _, item in ipairs(recent_files) do
+               item.section = "Recent files"
+             end
+             return recent_files
+           end,
+           { name = "Lazy", action = "Lazy", section = "Actions" },
+           { name = "Quit", action = "qa", section = "Actions" },
+         },
         content_hooks = {
           require("mini.starter").gen_hook.adding_bullet(),
           require("mini.starter").gen_hook.indexing("all", { "Actions" }),
