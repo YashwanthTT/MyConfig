@@ -16,9 +16,9 @@ vim.keymap.set('n', '<leader>-', '<C-x>', { desc = 'Decrement number' })
 vim.keymap.set('n', '<leader>e', '<cmd>Ex<cr>', { desc = 'Open the file explorer' })
 
 -- Window management
-vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' })
-vim.keymap.set('n', '<leader>se', '<C-w>=', { desc = 'Make splits equal size' })
+vim.keymap.set('n', '<leader>wv', '<C-w>v', { desc = 'Split window vertically' })
+vim.keymap.set('n', '<leader>wh', '<C-w>s', { desc = 'Split window horizontally' })
+vim.keymap.set('n', '<leader>we', '<C-w>=', { desc = 'Make splits equal size' })
 vim.keymap.set('n', '<leader>wd', '<cmd>close<CR>', { desc = 'Close current window' })
 
 -- Tab management
