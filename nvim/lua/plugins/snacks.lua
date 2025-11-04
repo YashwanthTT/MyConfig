@@ -43,25 +43,11 @@ return {
         desc = 'Buffer Lines',
       },
       {
-        '<leader>sC',
-        function()
-          Snacks.picker.commands()
-        end,
-        desc = 'Commands',
-      },
-      {
         '<leader>sd',
         function()
           Snacks.picker.diagnostics()
         end,
         desc = 'Diagnostics',
-      },
-      {
-        '<leader>su',
-        function()
-          Snacks.picker.undo()
-        end,
-        desc = 'Undo History',
       },
       -- LSP
       {
