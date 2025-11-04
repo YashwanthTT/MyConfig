@@ -177,3 +177,6 @@ vim.keymap.set('n', '<leader>z', function()
     vim.cmd ':wincmd j'
   end
 end, { desc = 'Compile and run the current file' })
+
+vim.cmd 'autocmd BufEnter * set formatoptions-=cro'
+vim.cmd 'autocmd BufEnter * setlocal formatoptions-=cro'
