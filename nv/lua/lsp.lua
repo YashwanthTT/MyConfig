@@ -6,7 +6,6 @@ return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     { 'j-hui/fidget.nvim', opts = {} },
     'saghen/blink.cmp',
-    'folke/trouble.nvim',
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -19,16 +18,13 @@ return {
 
         map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
-        map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-        map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
-        map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('grr', vim.lsp.buf.references, '[G]oto [R]eferences')
+        map('gri', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
+        map('grd', vim.lsp.buf.definition, '[G]oto [D]efinition')
         map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-        map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
-        map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
-        map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
-        
-        map('<leader>xx', '<cmd>Trouble diagnostics toggle<cr>', 'Diagnostics (Trouble)')
-        map('<leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', 'Buffer Diagnostics (Trouble)')
+        map('gO', vim.lsp.buf.document_symbol, 'Open Document Symbols')
+        map('gW', vim.lsp.buf.workspace_symbol, 'Open Workspace Symbols')
+        map('grt', vim.lsp.buf.type_definition, '[G]oto [T]ype Definition')
 
         local function client_supports_method(client, method, bufnr)
           if vim.fn.has 'nvim-0.11' == 1 then
@@ -74,21 +70,7 @@ return {
       severity_sort = true,
       float = { border = 'rounded', source = 'if_many' },
       underline = true,
-      signs = vim.g.have_nerd_font and {
-        text = {
-          [vim.diagnostic.severity.ERROR] = '󰅚 ',
-          [vim.diagnostic.severity.WARN] = '󰀪 ',
-          [vim.diagnostic.severity.INFO] = '󰋽 ',
-          [vim.diagnostic.severity.HINT] = '󰌶 ',
-        },
-      } or {
-        text = {
-          [vim.diagnostic.severity.ERROR] = 'E',
-          [vim.diagnostic.severity.WARN] = 'W',
-          [vim.diagnostic.severity.INFO] = 'I',
-          [vim.diagnostic.severity.HINT] = 'H',
-        },
-      },
+      signs = false,
       virtual_text = {
         source = 'if_many',
         spacing = 4,
@@ -104,6 +86,32 @@ return {
           Lua = {
             completion = {
               callSnippet = 'Replace',
+            },
+          },
+        },
+      },
+      ts_ls = {
+        settings = {
+          typescript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
+            },
+          },
+          javascript = {
+            inlayHints = {
+              includeInlayParameterNameHints = 'all',
+              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+              includeInlayFunctionParameterTypeHints = true,
+              includeInlayVariableTypeHints = true,
+              includeInlayPropertyDeclarationTypeHints = true,
+              includeInlayFunctionLikeReturnTypeHints = true,
+              includeInlayEnumMemberValueHints = true,
             },
           },
         },

@@ -1,14 +1,16 @@
 return {
-  'echasnovski/mini.nvim',
-  config = function()
-    require('mini.ai').setup { n_lines = 500 }
-    require('mini.surround').setup()
-
-    local statusline = require 'mini.statusline'
-    statusline.setup { use_icons = vim.g.have_nerd_font }
-
-    statusline.section_location = function()
-      return '%2l:%-2v'
-    end
-  end,
+  {
+    'nvim-mini/mini.nvim',
+    version = '*',
+    config = function()
+      require('mini.pick').setup {}
+      require('mini.align').setup {}
+      require('mini.comment').setup {}
+      require('mini.pairs').setup {}
+      require('mini.surround').setup {}
+      require('mini.starter').setup {}
+      require('mini.pairs').setup {}
+      require('mini.icons').setup {}
+    end,
+  },
 }
