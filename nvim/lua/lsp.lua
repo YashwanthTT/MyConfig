@@ -78,14 +78,47 @@ return {
 
     vim.diagnostic.config {
       severity_sort = true,
-      float = { border = 'rounded', source = 'if_many' },
-      underline = true,
-      signs = false,
-      virtual_text = {
-        source = 'if_many',
-        spacing = 4,
-        prefix = '●',
+      float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+        focusable = true,
+        max_width = 80,
+        max_height = 20,
       },
+      underline = true,
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = '✘',
+          [vim.diagnostic.severity.WARN] = '▲',
+          [vim.diagnostic.severity.HINT] = '⚑',
+          [vim.diagnostic.severity.INFO] = '»',
+        },
+      },
+      virtual_text = {
+        spacing = 4,
+        source = 'always',
+        prefix = '●',
+        format = function(diagnostic)
+          local max_width = 60
+          local message = diagnostic.message
+          if #message > max_width then
+            message = message:sub(1, max_width) .. '...'
+          end
+          if diagnostic.severity == vim.diagnostic.severity.ERROR then
+            return string.format('✘ %s', message)
+          end
+          if diagnostic.severity == vim.diagnostic.severity.WARN then
+            return string.format('▲ %s', message)
+          end
+          if diagnostic.severity == vim.diagnostic.severity.HINT then
+            return string.format('⚑ %s', message)
+          end
+          return string.format('» %s', message)
+        end,
+      },
+      update_in_insert = false,
     }
 
     local capabilities = require('blink.cmp').get_lsp_capabilities()
@@ -96,6 +129,9 @@ return {
           Lua = {
             completion = {
               callSnippet = 'Replace',
+            },
+            diagnostics = {
+              globals = { 'vim' },
             },
           },
         },
@@ -113,16 +149,33 @@ return {
               includeInlayEnumMemberValueHints = true,
             },
           },
-          javascript = {
-            inlayHints = {
-              includeInlayParameterNameHints = 'all',
-              includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-              includeInlayFunctionParameterTypeHints = true,
-              includeInlayVariableTypeHints = true,
-              includeInlayPropertyDeclarationTypeHints = true,
-              includeInlayFunctionLikeReturnTypeHints = true,
-              includeInlayEnumMemberValueHints = true,
+        },
+      },
+      clangd = {
+        cmd = {
+          'clangd',
+          '--background-index',
+          '--clang-tidy',
+          '--header-insertion=iwyu',
+          '--completion-style=detailed',
+          '--function-arg-placeholders',
+          '--fallback-style=llvm',
+        },
+        init_options = {
+          usePlaceholders = true,
+          completeUnimported = true,
+          clangdFileStatus = true,
+        },
+      },
+      gopls = {
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+              shadow = true,
             },
+            staticcheck = true,
+            gofumpt = true,
           },
         },
       },
@@ -131,6 +184,11 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua',
+      'gofumpt',
+      'goimports',
+      'eslint_d',
+      'luacheck',
+      'golangci-lint',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
