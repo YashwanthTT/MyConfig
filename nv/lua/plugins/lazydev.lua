@@ -1,6 +1,5 @@
 return {
   'folke/lazydev.nvim',
-  event = 'BufReadPre',
   ft = 'lua',
   opts = {
     library = {

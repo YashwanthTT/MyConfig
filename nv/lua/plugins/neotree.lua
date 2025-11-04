@@ -5,12 +5,9 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
-      'nvim-tree/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons', -- optional, but recommended
     },
-    cmd = 'Neotree',
-    keys = {
-      { '<leader>e', '<cmd>Neotree toggle<CR>', desc = 'neotree' },
-    },
+    lazy = false, -- neo-tree will lazily load itself
     config = function()
       require('neo-tree').setup {
         filesystem = {
@@ -34,3 +31,5 @@ return {
     end,
   },
 }
+
+---help
