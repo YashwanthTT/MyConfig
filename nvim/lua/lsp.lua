@@ -116,11 +116,6 @@ return {
           },
         },
       },
-      -- pyright = {}, -- Python
-      -- ts_ls = {}, -- TypeScript
-      -- gopls = {}, -- Go
-      -- rust_analyzer = {}, -- Rust
-      -- clangd = {}, -- C/C++
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})

@@ -2,14 +2,21 @@
 
 ## Overview
 
-The LSP (Language Server Protocol) configuration is located in `lua/lsp.lua`. This file contains all the setup for language servers, diagnostics, and LSP-related keymaps.
+The LSP (Language Server Protocol) configuration is located in `lua/lsp.lua`. This file contains all the setup for language servers, diagnostics, and LSP-related keymaps. It's integrated with blink.cmp for completion capabilities.
+
+## Currently Configured Servers
+
+The following language servers are currently configured:
+
+- **lua_ls** - Lua (with blink.cmp integration)
+- **ts_ls** - TypeScript/JavaScript (with inlay hints enabled)
 
 ## Adding a New Language Server
 
 To add a new language server:
 
 1. Open `lua/lsp.lua`
-2. Find the `servers` table (around line 106)
+2. Find the `servers` table (around line 83)
 3. Add your server configuration:
 
 ```lua
@@ -23,14 +30,29 @@ local servers = {
       },
     },
   },
+  ts_ls = {
+    settings = {
+      typescript = {
+        inlayHints = {
+          includeInlayParameterNameHints = 'all',
+        },
+      },
+      javascript = {
+        inlayHints = {
+          includeInlayParameterNameHints = 'all',
+        },
+      },
+    },
+  },
   -- Add your server here
   pyright = {},  -- Python
-  ts_ls = {},    -- TypeScript
   gopls = {},    -- Go
   rust_analyzer = {}, -- Rust
   clangd = {},   -- C/C++
 }
 ```
+
+**Important:** The ts_ls configuration includes inlay hints for TypeScript and JavaScript. Make sure to enable inlay hints with `<leader>th` when working with these files.
 
 ## Available LSP Servers
 
@@ -123,6 +145,14 @@ vim.list_extend(ensure_installed, {
 3. Configure linters in `lua/custom/plugins/lint.lua`
 
 ## Troubleshooting
+
+### TypeScript/JavaScript LSP Issues
+
+If ts_ls isn't working with blink.cmp:
+1. Ensure ts_ls is in the `servers` table (not commented out)
+2. Restart Neovim to trigger Mason installation
+3. Check LSP status with `:LspInfo`
+4. Verify blink.cmp is providing capabilities with `:lua print(vim.inspect(require('blink.cmp').get_lsp_capabilities()))`
 
 Check LSP status:
 ```vim

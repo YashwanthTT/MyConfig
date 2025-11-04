@@ -1,7 +1,6 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  main = 'nvim-treesitter.configs',
   opts = {
     ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
     auto_install = true,
@@ -11,4 +10,10 @@ return {
     },
     indent = { enable = true, disable = { 'ruby' } },
   },
+  config = function(_, opts)
+    local ok, configs = pcall(require, 'nvim-treesitter.configs')
+    if ok then
+      configs.setup(opts)
+    end
+  end,
 }
