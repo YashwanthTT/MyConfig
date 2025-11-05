@@ -28,6 +28,9 @@ return {
     completion = {
       documentation = { auto_show = false, auto_show_delay_ms = 500 },
     },
+    cmdline = {
+      enabled = false,
+    },
     sources = {
       default = { 'lsp', 'path', 'snippets', 'lazydev' },
       providers = {
