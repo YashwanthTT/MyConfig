@@ -24,6 +24,6 @@ return {
 
     vim.keymap.set('n', '<leader>t', function()
       require('undotree').toggle()
-    end, { noremap = true, silent = true })
+    end, { noremap = true, silent = true, desc = 'Toggle undo tree' })
   end,
 }
