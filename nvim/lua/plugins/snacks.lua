@@ -7,6 +7,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       indent = { enabled = true },
+      explorer = { enabled = true },
       input = { enabled = true },
       quickfile = { enabled = true },
       scope = { enabled = true },
@@ -26,6 +27,13 @@ return {
           Snacks.picker.git_log()
         end,
         desc = 'Git Log',
+      },
+      {
+        '<leader>e',
+        function()
+          Snacks.picker.explorer()
+        end,
+        desc = 'File Explorer',
       },
       -- search
       {
