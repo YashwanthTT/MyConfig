@@ -4,6 +4,7 @@ return {
     version = '*',
     config = function()
       require('mini.pick').setup {}
+      vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bg = '#2c323c' })
       require('mini.align').setup {}
       require('mini.surround').setup {}
       require('mini.starter').setup {
