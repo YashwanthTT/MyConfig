@@ -1,7 +1,9 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Terminal mode exit
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Window navigation
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
@@ -20,9 +22,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move line up' })
 vim.keymap.set('n', '<leader>rr', [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = 'Live preview replace' })
 vim.keymap.set('v', '<leader>rr', [[:s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = 'Replace word under cursor (selection)' })
 
--- Insert mode
-vim.keymap.set('i', 'jk', '<ESC>', { desc = 'Exit insert mode' })
-
+-- Swap ; and :
 vim.keymap.set({ 'n', 'v', 'x' }, ';', ':')
 vim.keymap.set({ 'n', 'v', 'x' }, ':', ';')
 
