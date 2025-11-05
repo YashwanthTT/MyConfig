@@ -6,7 +6,7 @@ return {
   keys = {
     {
       '<leader>xx',
-      '<cmd>Trouble diagnostics toggle<cr>',
+      '<cmd>Trouble diagnostics focus<cr>',
       desc = 'Diagnostics (Trouble)',
     },
     {
