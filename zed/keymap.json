@@ -181,7 +181,7 @@
       // Terminal
       "space t": "workspace::ToggleBottomDock",
       // Windows management
-      "space w s": "pane::SplitDown",
+      "space w h": "pane::SplitDown",
       "space w v": "pane::SplitRight",
       "space -": "pane::SplitDown",
       "space |": "pane::SplitRight",
