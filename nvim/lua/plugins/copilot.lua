@@ -1,7 +1,7 @@
 return {
   {
     'github/copilot.vim',
-    lazy = false,
+    event = 'VeryLazy',
     config = function()
       vim.cmd [[
       highlight CopilotSuggestion guifg=#666666 ctermfg=DarkGrey

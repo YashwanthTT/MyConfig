@@ -47,6 +47,7 @@ return {
   -- 2. lualine with custom theme (transparent center)
   {
     'nvim-lualine/lualine.nvim',
+    event = 'VeryLazy',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       local my_theme = {

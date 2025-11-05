@@ -1,5 +1,9 @@
 return {
   'jiaoshijie/undotree',
+  cmd = 'UndotreeToggle',
+  keys = {
+    { '<leader>t', desc = 'Toggle undo tree' },
+  },
   config = function()
     require('undotree').setup {
       float_diff = true,

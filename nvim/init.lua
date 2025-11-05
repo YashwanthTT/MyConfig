@@ -1,6 +1,5 @@
 require 'options'
 require 'keymaps'
-require 'autocmds'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -18,6 +17,17 @@ require('lazy').setup({
   { import = 'plugins' },
   require 'lsp',
 }, {
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        'gzip',
+        'tarPlugin',
+        'tohtml',
+        'tutor',
+        'zipPlugin',
+      },
+    },
+  },
   ui = {
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
@@ -36,3 +46,5 @@ require('lazy').setup({
     },
   },
 })
+
+require 'autocmds'
