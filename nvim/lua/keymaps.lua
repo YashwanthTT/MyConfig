@@ -1,5 +1,9 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+--Write and Quit
+vim.keymap.set('n', '<leader>qq', '<cmd>quit<CR>', { desc = 'Quit' })
+vim.keymap.set('n', '<leader>ww', '<cmd>write<CR>', { desc = 'Write' })
+
 -- Terminal mode exit
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
