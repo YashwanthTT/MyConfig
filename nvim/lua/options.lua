@@ -20,6 +20,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.signcolumn = 'no'
 vim.o.updatetime = 250
+vim.o.fillchars = 'eob: '
 vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true

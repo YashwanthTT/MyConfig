@@ -2,8 +2,8 @@ general.import = [
     "~/.config/alacritty/themes/moonfly.toml"
 ]
 
-[colors]
-primary = { background = "#222834", foreground = "#d8d8d8"}
+# [colors]
+# primary = { background = "#222834", foreground = "#d8d8d8"}
 
 [window]
 # padding.x = 1
