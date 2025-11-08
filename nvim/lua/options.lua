@@ -19,6 +19,7 @@ vim.o.undofile = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.signcolumn = 'no'
+vim.o.wrap = false
 vim.o.updatetime = 250
 vim.o.fillchars = 'eob: '
 vim.o.timeoutlen = 300
