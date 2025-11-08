@@ -30,9 +30,6 @@ vim.keymap.set('v', '<leader>rr', [[:s/\<<C-r><C-w>\>//g<Left><Left>]], { desc =
 vim.keymap.set({ 'n', 'v', 'x' }, ';', ':')
 vim.keymap.set({ 'n', 'v', 'x' }, ':', ';')
 
--- Neotree
-vim.keymap.set('n', '<leader>e', '<cmd>Neotree toggle<CR>', { desc = 'neotree' })
-
 -- Mini
 vim.keymap.set('n', '<leader><space>', '<cmd>Pick files<CR>', { desc = 'Files' })
 vim.keymap.set('n', '<leader>ff', '<cmd>Pick files<CR>', { desc = 'Files' })
