@@ -22,7 +22,6 @@ vim.o.signcolumn = 'no'
 vim.o.wrap = false
 vim.o.updatetime = 250
 vim.o.fillchars = 'eob: '
-vim.o.timeoutlen = 300
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.list = false
