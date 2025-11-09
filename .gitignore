@@ -7,7 +7,8 @@ raycast/extensions
 configstore/update-notifier-@google
 /typy
 /jj
-
+/lazyvim
+/nv
 /github-copilot
 
 zed/prompts/prompts-library-db.0.mdb
