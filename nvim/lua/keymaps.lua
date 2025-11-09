@@ -29,9 +29,3 @@ vim.keymap.set('v', '<leader>rr', [[:s/\<<C-r><C-w>\>//g<Left><Left>]], { desc =
 -- Swap ; and :
 vim.keymap.set({ 'n', 'v', 'x' }, ';', ':')
 vim.keymap.set({ 'n', 'v', 'x' }, ':', ';')
-
--- Mini
-vim.keymap.set('n', '<leader><space>', '<cmd>Pick files<CR>', { desc = 'Files' })
-vim.keymap.set('n', '<leader>ff', '<cmd>Pick files<CR>', { desc = 'Files' })
-vim.keymap.set('n', '<leader>fb', '<cmd>Pick buffers<CR>', { desc = 'Buffers' })
-vim.keymap.set('n', '<leader>fg', '<cmd>Pick grep_live<CR>', { desc = 'Live Grep' })

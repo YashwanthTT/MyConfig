@@ -3,8 +3,6 @@ return {
     'nvim-mini/mini.nvim',
     version = '*',
     config = function()
-      require('mini.pick').setup {}
-      vim.api.nvim_set_hl(0, 'MiniPickMatchCurrent', { bg = '#2c323c' })
       require('mini.align').setup {}
       require('mini.surround').setup {}
       require('mini.starter').setup {
@@ -29,11 +27,11 @@ return {
       }
       require('mini.pairs').setup {}
       require('mini.icons').setup {}
-       require('mini.hipatterns').setup {
-         highlighters = {
-           hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
-         },
-       }
+      require('mini.hipatterns').setup {
+        highlighters = {
+          hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
+        },
+      }
     end,
   },
 }
