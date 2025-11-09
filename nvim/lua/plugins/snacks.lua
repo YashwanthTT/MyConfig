@@ -37,6 +37,13 @@ return {
         desc = 'Find Config File',
       },
       {
+        '<leader><space>',
+        function()
+          Snacks.picker.files()
+        end,
+        desc = 'Find Files',
+      },
+      {
         '<leader>ff',
         function()
           Snacks.picker.files()
@@ -49,14 +56,6 @@ return {
           Snacks.picker.git_files()
         end,
         desc = 'Find Git Files',
-      },
-
-      {
-        '<leader><space>',
-        function()
-          Snacks.picker.smart()
-        end,
-        desc = 'Find Fils',
       },
       {
         '<leader>gl',
