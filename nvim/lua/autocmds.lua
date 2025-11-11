@@ -174,9 +174,8 @@ vim.keymap.set("n", "<leader>z", function()
 	end
 
 	if command ~= "" then
-		vim.cmd("10 split")
+		vim.cmd("belowright 10 split")
 		vim.cmd("terminal " .. command)
 		vim.cmd("startinsert")
-		vim.cmd(":wincmd j")
 	end
 end, { desc = "Compile and run the current file" })
