@@ -3,15 +3,14 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   config = function()
     local lint = require('lint')
-    lint.linters.clangtidy.cmd = '/opt/homebrew/opt/llvm/bin/clang-tidy'
     lint.linters_by_ft = {
-      c = { 'clangtidy' },
-      cpp = { 'clangtidy' },
+      c = { 'cpplint' },
+      cpp = { 'cpplint' },
       go = { 'golangcilint' },
-      javascript = { 'eslint' },
-      typescript = { 'eslint' },
-      javascriptreact = { 'eslint' },
-      typescriptreact = { 'eslint' },
+      javascript = { 'eslint_d' },
+      typescript = { 'eslint_d' },
+      javascriptreact = { 'eslint_d' },
+      typescriptreact = { 'eslint_d' },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup('lint', { clear = true })

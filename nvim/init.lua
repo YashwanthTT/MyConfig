@@ -15,7 +15,6 @@ rtp:prepend(lazypath)
 
 require('lazy').setup({
   { import = 'plugins' },
-  require 'lsp',
 }, {
   performance = {
     rtp = {
