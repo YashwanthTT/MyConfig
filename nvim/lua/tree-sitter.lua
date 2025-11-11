@@ -5,6 +5,8 @@ vim.pack.add({
 package.path = package.path
 	.. ";/Users/yashwanth/.local/share/nvim/site/pack/start/nvim-treesitter/lua/?.lua;/Users/yashwanth/.local/share/nvim/site/pack/start/nvim-treesitter/lua/?/init.lua"
 
+require("nvim-treesitter.install").update("all")
+
 require("nvim-treesitter.configs").setup({
 	auto_install = true, -- autoinstall languages that are not installed yet
 })
