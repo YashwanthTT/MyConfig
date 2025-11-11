@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
 vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -22,4 +23,6 @@ vim.opt.expandtab = true
 vim.opt.textwidth = 80
 vim.o.winborder = "rounded"
 vim.opt.cmdheight = 0
-
+vim.opt.ignorecase = true -- Ignores case in search patterns
+vim.opt.smartcase = true -- Case-sensitive if uppercase in pattern
+vim.opt.undofile = true -- Enables undo files
