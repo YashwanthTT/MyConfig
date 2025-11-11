@@ -73,6 +73,13 @@ return {
       },
       -- search
       {
+        '<leader>sg',
+        function()
+          Snacks.picker.grep()
+        end,
+        desc = 'Grep',
+      },
+      {
         '<leader>s"',
         function()
           Snacks.picker.registers()
