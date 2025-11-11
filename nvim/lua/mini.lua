@@ -13,7 +13,6 @@ require("mini.starter").setup({
 			end
 			return recent_files
 		end,
-		{ name = "Lazy", action = "Lazy", section = "Actions" },
 		{ name = "Quit", action = "qa", section = "Actions" },
 	},
 	content_hooks = {
