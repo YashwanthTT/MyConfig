@@ -35,12 +35,12 @@
     "noice.nvim": {
       "rev": "main",
       "src": "https://github.com/folke/noice.nvim",
-      "version": "'*'"
+      "version": "'stable'"
     },
     "nui.nvim": {
       "rev": "main",
       "src": "https://github.com/MunifTanjim/nui.nvim",
-      "version": "'*'"
+      "version": "'stable'"
     },
     "nvim-lint": [],
     "nvim-lspconfig": {
@@ -59,7 +59,7 @@
     "snacks.nvim": {
       "rev": "main",
       "src": "https://github.com/folke/snacks.nvim",
-      "version": "'*'"
+      "version": "'stable'"
     },
     "tokyonight.nvim": {
       "rev": "5da1b76",
