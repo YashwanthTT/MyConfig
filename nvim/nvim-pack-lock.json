@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "5d02b74",
+      "rev": "ab1b366",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "conform.nvim": {
@@ -29,11 +29,11 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "68d4478",
+      "rev": "890f6a3",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "noice.nvim": {
-      "rev": "main",
+      "rev": "cf758e9",
       "src": "https://github.com/folke/noice.nvim",
       "version": "'stable'"
     },
@@ -57,7 +57,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "snacks.nvim": {
-      "rev": "main",
+      "rev": "a4e46be",
       "src": "https://github.com/folke/snacks.nvim",
       "version": "'stable'"
     },
