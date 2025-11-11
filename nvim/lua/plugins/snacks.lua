@@ -11,6 +11,7 @@ return {
       input = { enabled = true },
       quickfile = { enabled = true },
       scope = { enabled = true },
+      picker = { enabled = true },
       scroll = { enabled = true },
       statuscolumn = { enabled = true },
       words = { enabled = true },
@@ -21,27 +22,35 @@ return {
       },
     },
     keys = {
+      -- Files
       {
-        '<leader>gl',
+        '<leader><space>',
         function()
-          Snacks.picker.git_log()
+          Snacks.picker.files()
         end,
-        desc = 'Git Log',
+        desc = 'Find Files',
       },
       {
-        '<leader>e',
+        '<leader>ff',
         function()
-          Snacks.picker.explorer()
+          Snacks.picker.files()
         end,
-        desc = 'File Explorer',
+        desc = 'Find Files',
       },
-      -- search
       {
-        '<leader>s"',
+        '<leader>fg',
         function()
-          Snacks.picker.registers()
+          Snacks.picker.git_files()
         end,
-        desc = 'Registers',
+        desc = 'Find Git Files',
+      },
+      -- Serach
+      {
+        '<leader>sg',
+        function()
+          Snacks.picker.grep()
+        end,
+        desc = 'Grep',
       },
       {
         '<leader>sb',
@@ -57,65 +66,7 @@ return {
         end,
         desc = 'Diagnostics',
       },
-      -- LSP
-      {
-        'gd',
-        function()
-          Snacks.picker.lsp_definitions()
-        end,
-        desc = 'Goto Definition',
-      },
-      {
-        'gD',
-        function()
-          Snacks.picker.lsp_declarations()
-        end,
-        desc = 'Goto Declaration',
-      },
-      {
-        'gr',
-        function()
-          Snacks.picker.lsp_references()
-        end,
-        nowait = true,
-        desc = 'References',
-      },
-      {
-        'gI',
-        function()
-          Snacks.picker.lsp_implementations()
-        end,
-        desc = 'Goto Implementation',
-      },
-      {
-        'gy',
-        function()
-          Snacks.picker.lsp_type_definitions()
-        end,
-        desc = 'Goto T[y]pe Definition',
-      },
-      {
-        'gai',
-        function()
-          Snacks.picker.lsp_incoming_calls()
-        end,
-        desc = 'C[a]lls Incoming',
-      },
-      {
-        'gao',
-        function()
-          Snacks.picker.lsp_outgoing_calls()
-        end,
-        desc = 'C[a]lls Outgoing',
-      },
       -- Other
-      {
-        '<leader>.',
-        function()
-          Snacks.scratch()
-        end,
-        desc = 'Toggle Scratch Buffer',
-      },
       {
         '<leader>gB',
         function()
@@ -165,15 +116,6 @@ return {
             end
             _G.bt = function()
               Snacks.debug.backtrace()
-            end
-
-            -- Override print to use snacks for `:=` command
-            if vim.fn.has 'nvim-0.11' == 1 then
-              vim._print = function(_, ...)
-                dd(...)
-              end
-            else
-              vim.print = _G.dd
             end
 
             -- Create some toggle mappings
