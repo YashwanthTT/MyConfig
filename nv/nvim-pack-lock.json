@@ -33,6 +33,12 @@
       "rev": "68d4478",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
+    "noice.nvim": {
+      "version": "'*'"
+    },
+    "nui.nvim": {
+      "version": "'*'"
+    },
     "nvim-lint": {
       "rev": "8b349e8",
       "src": "https://github.com/mfussenegger/nvim-lint"

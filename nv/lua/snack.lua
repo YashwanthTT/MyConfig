@@ -1,11 +1,14 @@
 vim.pack.add({
-	-- prefer full src for clarity; short "folke/snacks.nvim" also works
 	{ src = "https://github.com/folke/snacks.nvim", version = "*" },
+	{ src = "https://github.com/folke/noice.nvim", version = "*" },
+	{ src = "https://github.com/MunifTanjim/nui.nvim", version = "*" },
 })
 
 -- -- Important: setup should run early (before using modules)
 package.path = package.path
-	.. ";/Users/yashwanth/.local/share/nvim/site/pack/start/snacks.nvim/lua/?.lua;/Users/yashwanth/.local/share/nvim/site/pack/start/snacks.nvim/lua/?/init.lua"
+	.. ";/Users/yashwanth/.local/share/nv/site/pack/start/snacks.nvim/lua/?.lua;/Users/yashwanth/.local/share/nv/site/pack/start/snacks.nvim/lua/?/init.lua"
+	.. ";/Users/yashwanth/.local/share/nv/site/pack/start/noice.nvim/lua/?.lua;/Users/yashwanth/.local/share/nv/site/pack/start/noice.nvim/lua/?/init.lua"
+	.. ";/Users/yashwanth/.local/share/nv/site/pack/start/nui.nvim/lua/?.lua;/Users/yashwanth/.local/share/nv/site/pack/start/nui.nvim/lua/?/init.lua"
 local Snacks = require("snacks")
 
 Snacks.setup({
@@ -27,6 +30,23 @@ Snacks.setup({
 	styles = {
 		notification = {
 			-- wo = { wrap = true },
+		},
+	},
+})
+
+local Noice = require("noice")
+Noice.setup({
+	cmdline = {
+		enabled = true,
+		view = "cmdline_popup",
+	},
+	views = {
+		cmdline_popup = {
+			position = {
+				row = 3,
+				col = "50%",
+			},
+			anchor = "NW",
 		},
 	},
 })
