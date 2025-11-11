@@ -1,22 +1,20 @@
-
 vim.pack.add({
 	{ src = "https://github.com/folke/tokyonight.nvim" },
 })
 
-
-require('tokyonight').setup({
-  transparent = true,
-  styles = {
-    sidebars = 'transparent',
-    floats = 'transparent',
-  },
+require("tokyonight").setup({
+	transparent = true,
+	styles = {
+		sidebars = "transparent",
+		floats = "transparent",
+	},
 })
 
-vim.cmd.colorscheme 'tokyonight'
+vim.cmd.colorscheme("tokyonight")
 
 -- apply extended transparency to various ui elements
 local function set_transparency()
-  vim.cmd [[
+	vim.cmd([[
     hi pmenu guibg=none ctermbg=none
     hi pmenusel guibg=#137ec9 ctermbg=none
     hi normal guibg=none ctermbg=none
@@ -36,11 +34,11 @@ local function set_transparency()
     hi MiniStatuslineFilename guibg=none ctermbg=none
     hi MiniStatuslineFileinfo guibg=none ctermbg=none
     hi MiniStatuslineInactive guibg=none ctermbg=none
-  ]]
+  ]])
 end
 
 set_transparency()
-vim.api.nvim_create_autocmd('bufenter', {
-  pattern = '*',
-  callback = set_transparency,
+vim.api.nvim_create_autocmd("bufenter", {
+	pattern = "*",
+	callback = set_transparency,
 })

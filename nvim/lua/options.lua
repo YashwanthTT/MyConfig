@@ -26,3 +26,5 @@ vim.opt.cmdheight = 0
 vim.opt.ignorecase = true -- Ignores case in search patterns
 vim.opt.smartcase = true -- Case-sensitive if uppercase in pattern
 vim.opt.undofile = true -- Enables undo files
+vim.opt.timeoutlen = 1500
+vim.opt.ttimeoutlen = 100

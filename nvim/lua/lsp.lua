@@ -1,5 +1,3 @@
-
-
 vim.diagnostic.config({
 	signs = {
 		text = {
@@ -27,7 +25,6 @@ local lsp_servers = {
 	ts_ls = {},
 	jdtls = {},
 }
-
 
 vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
@@ -61,13 +58,6 @@ for server, config in pairs(lsp_servers) do
 		end,
 	})
 end
-
-
-
-
-
-
-
 
 require("mason").setup()
 require("mason-lspconfig").setup()

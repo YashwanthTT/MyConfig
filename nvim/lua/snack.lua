@@ -1,10 +1,8 @@
-
 vim.pack.add({
 	{ src = "https://github.com/folke/snacks.nvim", version = "*" },
 	{ src = "https://github.com/folke/noice.nvim", version = "*" },
 	{ src = "https://github.com/MunifTanjim/nui.nvim", version = "*" },
 })
-
 
 -- -- Important: setup should run early (before using modules)
 package.path = package.path
