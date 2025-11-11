@@ -28,3 +28,5 @@ vim.opt.smartcase = true -- Case-sensitive if uppercase in pattern
 vim.opt.undofile = true -- Enables undo files
 vim.opt.timeoutlen = 1500
 vim.opt.ttimeoutlen = 100
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
