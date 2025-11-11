@@ -2,6 +2,7 @@
 vim.pack.add({
 	{ src = "https://github.com/stevearc/oil.nvim" },
 })
+
 -- Oil
 require("oil").setup({
 	-- view_options = {
@@ -11,7 +12,9 @@ require("oil").setup({
 
 	keymaps = {
 		["g?"] = { "actions.show_help", mode = "n" },
-		["<C-u>"] = "actions.preview",
+		["<C-p>"] = "actions.preview",
+		["<C-c>"] = { "actions.close", mode = "n" },
+		["<C-l>"] = "actions.refresh",
 		["-"] = { "actions.parent", mode = "n" },
 		["_"] = { "actions.open_cwd", mode = "n" },
 		["`"] = { "actions.cd", mode = "n" },
