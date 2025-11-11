@@ -27,6 +27,26 @@ return {
       }
       require('mini.pairs').setup {}
       require('mini.icons').setup {}
+
+      require('mini.statusline').setup {
+        content = {
+          active = function()
+            local mode = MiniStatusline.section_mode {}
+            local filename = MiniStatusline.section_filename {}
+            return MiniStatusline.combine_groups {
+              { hl = 'MiniStatuslineMode', strings = { mode } },
+              { hl = 'MiniStatuslineFilename', strings = { filename } },
+            }
+          end,
+        },
+        use_icons = true,
+        set_vim_settings = true,
+      }
+
+      vim.cmd 'hi! StatusLine guibg=NONE ctermbg=NONE'
+      vim.cmd 'hi! MiniStatuslineFileinfo guibg=NONE ctermbg=NONE'
+      vim.cmd 'hi! MiniStatuslineMode guibg=NONE ctermbg=NONE'
+      vim.cmd 'hi! MiniStatuslineFilename guibg=NONE ctermbg=NONE'
       require('mini.hipatterns').setup {
         highlighters = {
           hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
