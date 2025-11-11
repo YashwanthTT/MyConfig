@@ -27,14 +27,14 @@ local lsp_servers = {
 }
 
 vim.pack.add({
-	"https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
+	{ src = "https://github.com/neovim/nvim-lspconfig" }, -- default configs for lsps
 
 	-- NOTE: if you'd rather install the lsps through your OS package manager you
 	-- can delete the next three mason-related lines and their setup calls below.
 	-- see `:h lsp-quickstart` for more details.
-	"https://github.com/mason-org/mason.nvim", -- package manager
-	"https://github.com/mason-org/mason-lspconfig.nvim", -- lspconfig bridge
-	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim", -- auto installer
+	{ src = "https://github.com/mason-org/mason.nvim" }, -- package manager
+	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" }, -- lspconfig bridge
+	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" }, -- auto installer
 }, { confirm = false })
 
 require("mason").setup()
