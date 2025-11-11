@@ -13,3 +13,5 @@ require("autocmds")
 require("copilot")
 require("trouble-nvim")
 require("format")
+
+vim.pack.update()

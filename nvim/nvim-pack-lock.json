@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "40380e7",
+      "rev": "5d02b74",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "conform.nvim": {
@@ -33,10 +33,12 @@
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "noice.nvim": {
+      "rev": "main",
       "src": "https://github.com/folke/noice.nvim",
       "version": "'*'"
     },
     "nui.nvim": {
+      "rev": "main",
       "src": "https://github.com/MunifTanjim/nui.nvim",
       "version": "'*'"
     },
@@ -55,6 +57,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "snacks.nvim": {
+      "rev": "main",
       "src": "https://github.com/folke/snacks.nvim",
       "version": "'*'"
     },
