@@ -17,8 +17,4 @@ startup_mode = "Maximized"
 [font]
 bold.family = "JetBrainsMono Nerd Font Mono"
 normal.family = "JetBrainsMono Nerd Font Mono"
-size = 18
-
-
-
-
+size = 19
