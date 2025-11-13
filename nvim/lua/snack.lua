@@ -111,8 +111,11 @@ map("n", "<leader>sC", function()
 	Snacks.picker.commands()
 end, { desc = "Commands" })
 map("n", "<leader>sd", function()
-	Snacks.picker.diagnostics()
+  Snacks.picker.diagnostics()
 end, { desc = "Diagnostics" })
+map("n", "<leader>su", function()
+  Snacks.picker.undo()
+end, { desc = "Undo History" })
 
 -- LSP
 map("n", "gd", function()
