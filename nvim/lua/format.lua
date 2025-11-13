@@ -18,6 +18,8 @@ require("conform").setup({
 		markdown = { "prettier" },
 		["*"] = { "codespell" },
 		["_"] = { "trim_whitespace" },
+		javascript = { "prettier", "eslint_d" },
+		typescript = { "prettier", "eslint_d" },
 	},
 	default_format_opts = {
 		lsp_format = "fallback",

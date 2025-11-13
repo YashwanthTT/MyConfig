@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "ab1b366",
+      "rev": "de57322",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "conform.nvim": {
@@ -29,7 +29,7 @@
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.nvim": {
-      "rev": "890f6a3",
+      "rev": "f43357b",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "noice.nvim": {
@@ -42,9 +42,11 @@
       "src": "https://github.com/MunifTanjim/nui.nvim",
       "version": "'stable'"
     },
-    "nvim-lint": [],
+    "nvim-lint": {
+      "rev": "2536f1b"
+    },
     "nvim-lspconfig": {
-      "rev": "2010fc6",
+      "rev": "b34fbdf",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": [],
