@@ -12,6 +12,10 @@
       "rev": "da369d9",
       "src": "https://github.com/github/copilot.vim"
     },
+    "gitsigns.nvim": {
+      "rev": "cdafc32",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
     "harpoon": {
       "rev": "1bc17e3",
       "src": "https://github.com/ThePrimeagen/harpoon"
