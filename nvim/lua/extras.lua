@@ -52,4 +52,4 @@ require("gitsigns").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>gh", "<cmd>Gitsigns attach<cr>")
+vim.keymap.set("n", "<leader>gh", "<cmd>Gitsigns<cr>")
