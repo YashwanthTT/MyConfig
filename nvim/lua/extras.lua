@@ -119,3 +119,5 @@ require("gitsigns").setup({
 -- 		map({ "o", "x" }, "ih", gitsigns.select_hunk)
 -- 	end,
 -- })
+
+vim.keymap.set("n", "<leader>gd", "<cmd>GitSigns diffthis")
