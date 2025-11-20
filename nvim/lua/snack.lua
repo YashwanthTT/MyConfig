@@ -50,6 +50,16 @@ Noice.setup({
 			anchor = "NW",
 		},
 	},
+	lsp = {
+		progress = {
+			enabled = false,
+		},
+	},
+	lint = {
+		progress = {
+			enabled = false,
+		},
+	},
 })
 
 -- Define keymaps after Snacks.setup()
