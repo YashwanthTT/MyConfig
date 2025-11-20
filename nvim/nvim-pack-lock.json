@@ -1,7 +1,7 @@
 {
   "plugins": {
     "blink.cmp": {
-      "rev": "b19413d",
+      "rev": "73ea297bc665c936b51797d5a55599536ffee0d8",
       "src": "https://github.com/saghen/blink.cmp"
     },
     "conform.nvim": {
@@ -33,7 +33,7 @@
       "src": "https://github.com/ThePrimeagen/harpoon"
     },
     "mason-lspconfig.nvim": {
-      "rev": "b1d9a91",
+      "rev": "7d527c76c43f46294de9c19d39c5a86317809b4b",
       "src": "https://github.com/mason-org/mason-lspconfig.nvim"
     },
     "mason-tool-installer.nvim": {
@@ -75,11 +75,11 @@
       "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-lint": {
-      "rev": "baf7c91c2b868b12446df511d4cdddc98e9bf66e",
+      "rev": "a0718addcf9b5ba4325eb45441020bb824af9503",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "abf6d19",
+      "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
@@ -112,7 +112,7 @@
       "src": "https://github.com/folke/tokyonight.nvim"
     },
     "triforce.nvim": {
-      "rev": "64e0aa138e3d0bfe143f6ceb1959e3a504e48f92",
+      "rev": "12c6915feddbb84656e4e4aa97b238096f907eb9",
       "src": "https://github.com/gisketch/triforce.nvim"
     },
     "trouble.nvim": {
