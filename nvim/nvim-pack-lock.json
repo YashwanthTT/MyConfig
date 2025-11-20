@@ -49,7 +49,7 @@
       "src": "https://github.com/nvchad/menu"
     },
     "mini.nvim": {
-      "rev": "dce9bc4",
+      "rev": "6e885e4c27743ae6bf5957ea78ce86c032835f09",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "nightfox.nvim": {
