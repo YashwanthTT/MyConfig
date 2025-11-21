@@ -26,9 +26,9 @@ require("mini.starter").setup({
 require("mini.pairs").setup({})
 require("mini.icons").setup({})
 require("mini.hipatterns").setup({
-  highlighters = {
-    hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
-  },
+	highlighters = {
+		hex_color = require("mini.hipatterns").gen_highlighter.hex_color(),
+	},
 })
 
 require("mini.statusline").setup({
