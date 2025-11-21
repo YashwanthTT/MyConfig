@@ -102,6 +102,10 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "quicker.nvim": {
+      "rev": "12a2291869a326424b1cbee937f4f80334433012",
+      "src": "https://github.com/stevearc/quicker.nvim"
+    },
     "silkcircuit-nvim": {
       "rev": "5549f46ac8bb525a314973fa03ec3b003e57b609",
       "src": "https://github.com/hyperb1iss/silkcircuit-nvim"
