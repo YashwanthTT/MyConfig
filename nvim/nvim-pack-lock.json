@@ -65,6 +65,10 @@
       "src": "https://github.com/folke/noice.nvim",
       "version": "'stable'"
     },
+    "nomad": {
+      "rev": "66c1fc1a6285802c78f54f0d63053519e3b8e523",
+      "src": "https://github.com/nomad/nomad"
+    },
     "nui.nvim": {
       "rev": "main",
       "src": "https://github.com/MunifTanjim/nui.nvim",
@@ -79,7 +83,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "b7c48a7111534b66bee077da8035ac7208a294ff",
+      "rev": "e0fae251f8459940331960106d4bd9457cec23de",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
