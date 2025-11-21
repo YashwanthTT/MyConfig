@@ -25,3 +25,13 @@ require("oil").setup({
 	},
 })
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<cr>")
+
+-- Quicker.nvim
+
+vim.pack.add({
+	{ src = "https://github.com/stevearc/quicker.nvim" },
+})
+
+require("quicker").setup({
+	show_icon = false,
+})
