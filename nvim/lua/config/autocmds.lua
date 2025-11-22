@@ -55,63 +55,11 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 vim.api.nvim_create_autocmd("VimEnter", {
 	group = augroup("oil_on_dir"),
 	callback = function()
-		local arg = vim.fn.argv(0)
-		if arg == "." or (arg ~= "" and vim.fn.isdirectory(arg) == 1) then
-			require("oil").open(arg)
-		end
+		vim.defer_fn(function()
+			local arg = vim.fn.argv(0)
+			if arg == "." or (arg ~= "" and vim.fn.isdirectory(arg) == 1) then
+				require("oil").open(arg)
+			end
+		end, 0)
 	end,
 })
-
-vim.keymap.set("n", "<leader>z", function()
-	local command = ""
-	local source_file = vim.fn.expand("%:p")
-	local executable_file = vim.fn.expand("%:p:r")
-
-	if vim.o.filetype == "c" then
-		command = command .. vim.fn.expand("gcc ")
-	elseif vim.o.filetype == "cpp" then
-		command = command .. vim.fn.expand("g++ ")
-	else
-		command = command .. vim.fn.expand("chmod +x ")
-		command = command .. source_file
-		command = command .. vim.fn.expand(" && ")
-	end
-	if vim.o.filetype == "c" or vim.o.filetype == "cpp" then
-		command = command .. vim.fn.expand(" -Wall")
-		command = command .. vim.fn.expand(" -Wextra")
-		command = command .. vim.fn.expand(" -o ")
-		command = command .. executable_file
-		command = command .. vim.fn.expand(" ")
-		command = command .. source_file
-		command = command .. vim.fn.expand(" && ")
-		command = command .. executable_file
-	elseif string.match(vim.fn.getline(1), "^#!/") then
-		command = command .. vim.fn.shellescape(source_file)
-	elseif vim.o.filetype == "javascript" then
-		command = command .. vim.fn.expand("bun ")
-		command = command .. source_file
-	elseif vim.o.filetype == "typescript" then
-		command = command .. vim.fn.expand("bun ")
-		command = command .. source_file
-	elseif vim.o.filetype == "go" then
-		command = command .. vim.fn.expand("go run ")
-		command = command .. source_file
-	elseif vim.o.filetype == "python" then
-		command = command .. vim.fn.expand("python3 ")
-		command = command .. source_file
-	elseif vim.o.filetype == "lua" then
-		command = command .. vim.fn.expand("lua ")
-		command = command .. source_file
-	elseif vim.o.filetype == "java" then
-		command = command .. vim.fn.expand("java ")
-		command = command .. source_file
-	else
-		print("Unknown file type `" .. vim.o.filetype .. "`")
-	end
-
-	if command ~= "" then
-		vim.cmd("belowright 10 split")
-		vim.cmd("terminal " .. command)
-		vim.cmd("startinsert")
-	end
-end, { desc = "Compile and run the current file" })

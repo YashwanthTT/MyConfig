@@ -3,6 +3,9 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 	opts = {
+		notify = {
+			enabled = false,
+		},
 		cmdline = {
 			view = "cmdline_popup",
 		},

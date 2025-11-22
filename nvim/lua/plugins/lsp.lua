@@ -23,7 +23,7 @@ local lsp_servers = {
 return {
 	{
 		"williamboman/mason.nvim",
-		cmd = "Mason",
+		cmd = { "Mason", "MasonInstall", "MasonUpdate" },
 		build = ":MasonUpdate",
 		config = function()
 			require("mason").setup()
@@ -39,7 +39,7 @@ return {
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		lazy = true,
+		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
 		dependencies = "williamboman/mason.nvim",
 		config = function()
 			require("mason-tool-installer").setup({
