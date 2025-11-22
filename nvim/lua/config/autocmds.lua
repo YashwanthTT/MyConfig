@@ -52,6 +52,16 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
+vim.api.nvim_create_autocmd("VimEnter", {
+	group = augroup("oil_on_dir"),
+	callback = function()
+		local arg = vim.fn.argv(0)
+		if arg == "." or (arg ~= "" and vim.fn.isdirectory(arg) == 1) then
+			require("oil").open(arg)
+		end
+	end,
+})
+
 vim.keymap.set("n", "<leader>z", function()
 	local command = ""
 	local source_file = vim.fn.expand("%:p")
