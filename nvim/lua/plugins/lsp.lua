@@ -7,36 +7,38 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.HINT] = " ",
 		},
 	},
-	virtual_text = true, -- show inline diagnostics
+	virtual_text = true,
 })
 
 local lsp_servers = {
 	lua_ls = {
-		-- https://luals.github.io/wiki/settings/ | `:h nvim_get_runtime_file`
 		Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) } },
 	},
 	clangd = {},
 	rust_analyzer = {},
 	gopls = {},
 	ts_ls = {},
-	jdtls = {},
 }
 
 return {
 	{
 		"williamboman/mason.nvim",
+		cmd = "Mason",
+		build = ":MasonUpdate",
 		config = function()
 			require("mason").setup()
 		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = "williamboman/mason.nvim",
 		config = function()
 			require("mason-lspconfig").setup()
 		end,
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = "williamboman/mason.nvim",
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = vim.tbl_keys(lsp_servers),
@@ -45,44 +47,34 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+			"williamboman/mason-lspconfig.nvim",
+			"saghen/blink.cmp",
+		},
 		config = function()
-			local capabilities = require("blink-cmp").get_lsp_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-			-- configure each lsp server on the table lazily
-			-- to check what clients are attached to the current buffer, use
-			-- `:checkhealth vim.lsp`. to view default lsp keybindings, use `:h lsp-defaults`.
-			local lsp_setup_done = false
-			vim.api.nvim_create_autocmd("BufReadPost", {
-				once = true,
-				callback = function()
-					if not lsp_setup_done then
-						lsp_setup_done = true
-						for server, config in pairs(lsp_servers) do
-							vim.lsp.config(server, {
-								capabilities = capabilities,
-								settings = config,
+			local on_attach = function(_, bufnr)
+				local opts = { buffer = bufnr }
+				vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+				vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+				vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+				vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+				vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+				vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
+			end
 
-								-- only create the keymaps if the server attaches successfully
-								on_attach = function(_, bufnr)
-									vim.keymap.set(
-										"n",
-										"grd",
-										vim.lsp.buf.definition,
-										{ buffer = bufnr, desc = "vim.lsp.buf.definition()" }
-									)
+			for server, config in pairs(lsp_servers) do
+				vim.lsp.config(server, {
+					capabilities = capabilities,
+					settings = config,
+					on_attach = on_attach,
+				})
+			end
 
-									vim.keymap.set(
-										"n",
-										"<leader>f",
-										vim.lsp.buf.format,
-										{ buffer = bufnr, desc = "LSP: [F]ormat Document" }
-									)
-								end,
-							})
-						end
-					end
-				end,
-			})
+			vim.lsp.enable(vim.tbl_keys(lsp_servers))
 		end,
 	},
 }

@@ -25,7 +25,6 @@ vim.opt.textwidth = 80
 vim.o.winborder = "rounded"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-vim.opt.undofile = true
 vim.opt.timeoutlen = 1500
 vim.opt.ttimeoutlen = 100
 vim.opt.scrolloff = 10
