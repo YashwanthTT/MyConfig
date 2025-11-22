@@ -1,23 +1,5 @@
 return {
 	{
-		"stevearc/oil.nvim",
-		---@module 'oil'
-		---@type oil.SetupOpts
-		opts = {},
-		-- Optional dependencies
-		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-		-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-		-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-		lazy = false,
-	},
-	{
-		"stevearc/quicker.nvim",
-		ft = "qf",
-		---@module "quicker"
-		---@type quicker.SetupOptions
-		opts = {},
-	},
-	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup({
@@ -70,14 +52,6 @@ return {
 					col = 1,
 				},
 			})
-		end,
-	},
-	{
-		"theprimeagen/harpoon",
-		branch = "harpoon2",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require("harpoon"):setup()
 		end,
 	},
 }
