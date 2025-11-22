@@ -24,35 +24,3 @@ keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 
 keymap("n", "<leader>ww", "<cmd>w<CR>", { desc = "Save file" })
 keymap("n", "<leader>qq", "<cmd>x<CR>", { desc = "Save and quit" })
-
-keymap("n", "<leader>e", function()
-	require("oil").open()
-end, { desc = "Open oil" })
-
-keymap("n", "<leader>gh", function()
-	require("gitsigns").diffthis()
-end, { desc = "Show git diff in gitsigns" })
-
-keymap("n", "<leader>a", function()
-	require("harpoon"):list():add()
-end, { desc = "Add file to harpoon" })
-
-keymap("n", "<leader>h", function()
-	require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
-end, { desc = "Toggle harpoon menu" })
-
-keymap("n", "<leader>1", function()
-	require("harpoon"):list():select(1)
-end, { desc = "Select harpoon 1" })
-
-keymap("n", "<leader>2", function()
-	require("harpoon"):list():select(2)
-end, { desc = "Select harpoon 2" })
-
-keymap("n", "<leader>3", function()
-	require("harpoon"):list():select(3)
-end, { desc = "Select harpoon 3" })
-
-keymap("n", "<leader>4", function()
-	require("harpoon"):list():select(4)
-end, { desc = "Select harpoon 4" })
