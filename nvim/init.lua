@@ -1,16 +1,34 @@
-require("options")
-require("Oil-nvim")
-require("mini")
-require("harpoon-nvim")
-require("blink")
-require("keymap")
-require("lsp")
-require("tree-sitter")
-require("colorscheme")
-require("lint")
-require("snack")
-require("autocmds")
-require("copilot")
-require("trouble-nvim")
-require("format")
-require("git-signs")
+require("config.options")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable",
+		lazypath,
+	})
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup("plugins", {
+	ui = {
+		border = "rounded",
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
+})
+
+require("config.keymaps")
+require("config.autocmds")

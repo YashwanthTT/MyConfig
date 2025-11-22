@@ -1,14 +1,16 @@
-vim.pack.add({
-	{ src = "https://github.com/scottmckendry/cyberdream.nvim" },
-})
+return {
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("cyberdream").setup({
+				transparent = true,
+			})
 
-require("cyberdream").setup({
-	transparent = true,
-})
+			vim.cmd("colorscheme cyberdream")
 
-vim.cmd("colorscheme cyberdream")
-
-vim.cmd([[
+			vim.cmd([[
     hi pmenu guibg=none ctermbg=none
     hi pmenusel guibg=#137ec9 ctermbg=none
     hi normal guibg=none ctermbg=none
@@ -34,3 +36,6 @@ vim.cmd([[
     hi FloatBorder guibg=none ctermbg=none
     hi NormalFloat guibg=none ctermbg=none
   ]])
+		end,
+	},
+}
