@@ -18,6 +18,9 @@ require("lazy").setup("plugins", {
 		border = "rounded",
 	},
 	performance = {
+		cache = {
+			enabled = true,
+		},
 		rtp = {
 			disabled_plugins = {
 				"gzip",
@@ -25,6 +28,9 @@ require("lazy").setup("plugins", {
 				"tohtml",
 				"tutor",
 				"zipPlugin",
+				"netrwPlugin",
+				"matchit",
+				"matchparen",
 			},
 		},
 	},

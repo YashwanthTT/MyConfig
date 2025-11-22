@@ -2,6 +2,8 @@ return {
 	{
 		"echasnovski/mini.nvim",
 		version = false,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("mini.statusline").setup({
 				content = {
@@ -18,10 +20,16 @@ return {
 				set_vim_settings = true,
 			})
 
-			vim.cmd("hi! StatusLine guibg=NONE ctermbg=NONE")
-			vim.cmd("hi! MiniStatuslineFileinfo guibg=NONE ctermbg=NONE")
-			vim.cmd("hi! MiniStatuslineMode guibg=NONE ctermbg=NONE")
-			vim.cmd("hi! MiniStatuslineFilename guibg=NONE ctermbg=NONE")
+			local highlights = {
+				"StatusLine",
+				"MiniStatuslineFileinfo",
+				"MiniStatuslineMode",
+				"MiniStatuslineFilename",
+			}
+			for _, hl in ipairs(highlights) do
+				vim.api.nvim_set_hl(0, hl, { bg = "none", ctermbg = "none" })
+			end
+
 			require("mini.pairs").setup()
 			require("mini.surround").setup()
 			require("mini.comment").setup()

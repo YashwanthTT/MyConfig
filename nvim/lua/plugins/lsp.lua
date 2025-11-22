@@ -31,6 +31,7 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		lazy = true,
 		dependencies = "williamboman/mason.nvim",
 		config = function()
 			require("mason-lspconfig").setup()
@@ -38,10 +39,12 @@ return {
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		lazy = true,
 		dependencies = "williamboman/mason.nvim",
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = vim.tbl_keys(lsp_servers),
+				run_on_start = false,
 			})
 		end,
 	},
