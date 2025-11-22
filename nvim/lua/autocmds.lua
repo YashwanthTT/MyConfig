@@ -111,6 +111,17 @@ vim.api.nvim_create_autocmd({ "filetype" }, {
 	end,
 })
 
+-- open help in vertical split
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	group = augroup("help_vertical"),
+	pattern = "*",
+	callback = function()
+		if vim.bo.filetype == "help" then
+			vim.cmd("wincmd L")
+		end
+	end,
+})
+
 -- auto create dir when saving a file, in case some intermediate directory does not exist
 vim.api.nvim_create_autocmd({ "bufwritepre" }, {
 	group = augroup("auto_create_dir"),
