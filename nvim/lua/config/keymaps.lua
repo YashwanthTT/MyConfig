@@ -1,4 +1,5 @@
 local keymap = vim.keymap.set
+local vim = vim
 
 keymap({ "n", "v", "x" }, ";", ":")
 keymap({ "n", "v", "x" }, ":", ";")
