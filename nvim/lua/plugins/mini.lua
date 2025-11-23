@@ -50,6 +50,7 @@ return {
 						return recent_files
 					end,
 					{ name = "Quit", action = "qa", section = "Actions" },
+					{ name = "Lazy", action = "Lazy", section = "Actions" },
 				},
 				content_hooks = {
 					require("mini.starter").gen_hook.adding_bullet(),
