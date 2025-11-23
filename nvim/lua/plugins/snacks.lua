@@ -17,7 +17,19 @@ return {
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			scroll = { enabled = true },
-			statuscolumn = { enabled = true },
+			statuscolumn = {
+				enabled = true,
+				left = { "mark", "sign", "git" },
+				right = { "fold" },
+				folds = {
+					open = false,
+					git_hl = false,
+				},
+				git = {
+					patterns = { "GitSign", "MiniDiffSign" },
+				},
+				refresh = 50,
+			},
 			words = { enabled = true },
 			styles = {
 				notification = {
@@ -26,21 +38,6 @@ return {
 			},
 		},
 		keys = {
-			-- Top Pickers & Explorer
-			{
-				"<leader>,",
-				function()
-					Snacks.picker.buffers()
-				end,
-				desc = "Buffers",
-			},
-			{
-				"<leader>/",
-				function()
-					Snacks.picker.grep()
-				end,
-				desc = "Grep",
-			},
 			-- find
 			{
 				"<leader>fc",
