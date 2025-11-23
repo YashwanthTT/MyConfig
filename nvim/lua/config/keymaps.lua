@@ -16,12 +16,12 @@ keymap("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 keymap("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 keymap("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
-keymap("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
-keymap("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
+-- Window management
+keymap("n", "<leader>wd", "<cmd>close<cr>")
+keymap("n", "<leader>wv", "<cmd>vsplit<cr>")
+keymap("n", "<leader>wh", "<cmd>split<cr>")
 
-keymap({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
-
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word under cursor" })
+keymap("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Live preview replace" })
 
 keymap("n", "<leader>ww", "<cmd>w<CR>", { desc = "Save file" })
 keymap("n", "<leader>qq", "<cmd>x<CR>", { desc = "Save and quit" })
