@@ -3,27 +3,32 @@ return {
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPost", "BufNewFile" },
 		keys = {
-			{ "<leader>gh", function() require("gitsigns").diffthis() end, desc = "Show git diff in gitsigns" },
+			{
+				"<leader>gh",
+				function()
+					require("gitsigns").diffthis()
+				end,
+				desc = "Show git diff in gitsigns",
+			},
 		},
 		config = function()
 			require("gitsigns").setup({
-				signs = {
-					add = { text = "┃" },
-					change = { text = "┃" },
-					delete = { text = "_" },
-					topdelete = { text = "‾" },
-
-					changedelete = { text = "~" },
-					untracked = { text = "┆" },
-				},
-				signs_staged = {
-					add = { text = "┃" },
-					change = { text = "┃" },
-					delete = { text = "_" },
-					topdelete = { text = "‾" },
-					changedelete = { text = "~" },
-					untracked = { text = "┆" },
-				},
+			signs = {
+				add = { text = "┃" },
+				change = { text = "┃" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
+			signs_staged = {
+				add = { text = "┃" },
+				change = { text = "┃" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+				untracked = { text = "┆" },
+			},
 				signs_staged_enable = true,
 				signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 				numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -56,6 +61,13 @@ return {
 					col = 1,
 				},
 			})
+
+		vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#a6e3a1", underline = false })
+		vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#f9e2af", underline = false })
+		vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#f38ba8", underline = false })
+		vim.api.nvim_set_hl(0, "GitSignsStagedAdd", { fg = "#a6e3a1", underline = false })
+		vim.api.nvim_set_hl(0, "GitSignsStagedChange", { fg = "#f9e2af", underline = false })
+		vim.api.nvim_set_hl(0, "GitSignsStagedDelete", { fg = "#f38ba8", underline = false })
 		end,
 	},
 }
