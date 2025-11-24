@@ -1,18 +1,15 @@
- return {
+return {
 	{
-		"folke/tokyonight.nvim",
+		"scottmckendry/cyberdream.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
+			require("cyberdream").setup({
 				transparent = true,
-				styles = {
-					sidebars = "transparent",
-					floats = "transparent",
-				},
+				cache = true,
 			})
 
-			vim.cmd.colorscheme("tokyonight")
+			vim.cmd.colorscheme("cyberdream")
 
 			-- apply extended transparency to various ui elements
 			local function set_transparency()
@@ -47,4 +44,3 @@
 		end,
 	},
 }
-
