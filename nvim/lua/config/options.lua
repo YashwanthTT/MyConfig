@@ -9,6 +9,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.undofile = true
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo"
 vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.signcolumn = "yes"
