@@ -4,7 +4,6 @@ return {
 		priority = 1000,
 		lazy = false,
 		dependencies = { "echasnovski/mini.icons" },
-		---@type snacks.Config
 		opts = {
 			bigfile = { enabled = true },
 			indent = { enabled = true },
