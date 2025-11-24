@@ -74,6 +74,7 @@ keymap("n", "<leader>z", function()
 	end
 
 	if command ~= "" then
+		vim.cmd("w")
 		vim.cmd("belowright 10 split")
 		vim.cmd("terminal " .. command)
 		vim.cmd("startinsert")
