@@ -1,0 +1,4 @@
+git:
+  paging:
+    colorArg: always
+    pager: delta --syntax-theme base16-256
