@@ -2,15 +2,6 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPost", "BufNewFile" },
-		keys = {
-			{
-				"<leader>gh",
-				function()
-					require("gitsigns").diffthis()
-				end,
-				desc = "Show git diff in gitsigns",
-			},
-		},
 		config = function()
 			require("gitsigns").setup({
 				signs = {
