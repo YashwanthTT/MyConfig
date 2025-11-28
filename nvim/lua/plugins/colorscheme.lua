@@ -17,8 +17,8 @@ return {
 			-- apply extended transparency to various ui elements
 			local function set_transparency()
 				vim.cmd([[
-					hi pmenu guibg=none ctermbg=none
-					hi pmenusel guibg=#2d3149 ctermbg=none
+					" hi pmenu guibg=none ctermbg=none
+					" hi pmenusel guibg=#2d3149 ctermbg=none
 					hi normal guibg=none ctermbg=none
 					hi normalnc guibg=none ctermbg=none
 					hi signcolumn guibg=none ctermbg=none
