@@ -14,11 +14,7 @@
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "ui_font_size": 17,
   "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "Gruvbox Light",
-    "dark": "One Dark"
-  },
+  "theme": "Tokyo Night",
   "edit_predictions": {
     "disabled_globs": [
       "**/.git",
@@ -170,7 +166,7 @@
     }
   },
   "tab_size": 4,
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "scrollbar": {
     "show": "never"
   },

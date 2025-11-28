@@ -14,11 +14,7 @@
   "ui_font_family": "JetBrainsMono Nerd Font Mono",
   "ui_font_size": 17,
   "buffer_font_size": 16,
-  "theme": {
-    "mode": "system",
-    "light": "Gruvbox Light",
-    "dark": "One Dark"
-  },
+  "theme": "Tokyo Night Moon",
   "edit_predictions": {
     "disabled_globs": [
       "**/.git",
@@ -50,9 +46,10 @@
     "enabled_in_text_threads": false
   },
   "agent": {
+    "always_allow_tool_actions": true,
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5-codex"
+      "model": "claude-sonnet-4.5"
     },
     "model_parameters": []
   },
@@ -62,10 +59,10 @@
       "language_servers": ["ruff", "basedpyright", "!pyright"],
       "formatter": [
         {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "code_action": "source.fixAll.ruff"
         },
         {
           "language_server": {
@@ -186,6 +183,7 @@
     "coloring": "indent_aware"
   },
   "terminal": {
+    "dock": "bottom",
     "env": {
       "EDITOR": "zed --wait"
     },
