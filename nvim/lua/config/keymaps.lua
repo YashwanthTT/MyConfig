@@ -83,3 +83,14 @@ keymap("n", "<leader>z", function()
 		vim.cmd("startinsert")
 	end
 end, { desc = "Compile and run the current file" })
+
+-- Toggle diagnostics
+local diagnostics_enabled = true
+keymap("n", "<leader>td", function()
+	diagnostics_enabled = not diagnostics_enabled
+	if diagnostics_enabled then
+		vim.diagnostic.enable()
+	else
+		vim.diagnostic.enable(false)
+	end
+end, { desc = "Toggle diagnostics" })
