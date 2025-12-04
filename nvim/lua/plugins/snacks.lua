@@ -12,7 +12,30 @@ return {
 				enabled = true,
 				timeout = 3000,
 			},
-			picker = { enabled = true },
+			picker = {
+				enabled = true,
+				sources = {
+					undo = {
+						layout = {
+							fullscreen = false,
+							layout = {
+								box = "horizontal",
+								width = 0.9,
+								height = 0.9,
+								{
+									box = "vertical",
+									border = true,
+									title = "{title} {live} {flags}",
+									width = 0.3,
+									{ win = "input", height = 1, border = "bottom" },
+									{ win = "list", border = "none" },
+								},
+								{ win = "preview", title = "{preview}", border = true, width = 0.7 },
+							},
+						},
+					},
+				},
+			},
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			scroll = { enabled = true },
