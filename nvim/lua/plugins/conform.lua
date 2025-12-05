@@ -18,7 +18,7 @@ return {
 					-- html = { "prettierd", "prettier", stop_after_first = true },
 					-- css = { "prettierd", "prettier", stop_after_first = true },
 					-- scss = { "prettierd", "prettier", stop_after_first = true },
-					-- rust = { "rustfmt" },
+					rust = { "rustfmt" },
 					-- go = { "gofmt", "goimports" },
 					-- sh = { "shfmt" },
 					-- c = { "clang_format" },
