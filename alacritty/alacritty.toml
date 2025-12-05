@@ -8,9 +8,9 @@ cursor = { cursor = "#D8D8D8" }
 
 [window]
 padding.x = 0
-padding.y = 2
+padding.y = 4
 decorations = "buttonless"
-opacity = 0.99
+opacity = 0.9
 blur = true
 option_as_alt = "both"
 startup_mode = "Maximized"
