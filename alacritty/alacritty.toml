@@ -3,14 +3,14 @@ general.import = [
 ]
 
 [colors]
-primary = { background = "#222834", foreground = "#d8d8d8"}
+primary = { background = "#000000", foreground = "#d8d8d8"}
 cursor = { cursor = "#D8D8D8" }
 
 [window]
 padding.x = 0
 padding.y = 4
 decorations = "buttonless"
-opacity = 0.95
+opacity = 0.9
 blur = true
 option_as_alt = "both"
 startup_mode = "Maximized"
