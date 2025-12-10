@@ -7,8 +7,8 @@ primary = { background = "#222834", foreground = "#d8d8d8"}
 cursor = { cursor = "#D8D8D8" }
 
 [window]
-padding.x = 0
-padding.y = 4
+padding.x = 2
+padding.y = 2
 decorations = "buttonless"
 opacity = 0.99
 blur = true
