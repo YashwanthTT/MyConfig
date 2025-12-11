@@ -9,6 +9,7 @@ configstore/update-notifier-@google
 /jj
 /github-copilot
 /coc
+/nv
 
 zed/prompts/prompts-library-db.0.mdb
 karabiner
