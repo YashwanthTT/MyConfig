@@ -19,6 +19,8 @@ local lsp_servers = {
 	rust_analyzer = {},
 	gopls = {},
 	ts_ls = {},
+	html = {},
+	cssls = {},
 }
 
 return {
