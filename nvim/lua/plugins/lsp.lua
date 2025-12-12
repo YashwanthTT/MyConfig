@@ -20,7 +20,6 @@ local lsp_servers = {
 	gopls = {},
 	ts_ls = {},
 	html = {},
-	cssls = {},
 }
 
 return {
