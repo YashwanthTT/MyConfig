@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function()
 		if vim.bo.filetype == "help" then
 			vim.cmd("wincmd L")
+			vim.cmd("vertical resize 95")
 		end
 	end,
 })
