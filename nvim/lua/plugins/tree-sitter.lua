@@ -17,6 +17,7 @@ return {
 				"markdown_inline",
 				"query",
 				"vim",
+				"svelte",
 				"vimdoc",
 			},
 			auto_install = true,
