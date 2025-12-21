@@ -15,7 +15,7 @@ return {
 					html = { "prettierd", "prettier", stop_after_first = true },
 					css = { "prettierd", "prettier", stop_after_first = true },
 					rust = { "rustfmt" },
-					go = { "gofmt" },
+					go = { "goimports" },
 				},
 				format_on_save = {
 					timeout_ms = 500,
