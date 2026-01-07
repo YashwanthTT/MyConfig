@@ -16,9 +16,4 @@ return {
 		},
 		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
 	},
-	{
-		"stevearc/quicker.nvim",
-		ft = "qf",
-		opts = {},
-	},
 }
