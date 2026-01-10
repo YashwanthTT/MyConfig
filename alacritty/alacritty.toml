@@ -1,16 +1,15 @@
-general.import = [
-    "~/.config/alacritty/themes/onedark.toml"
-]
-
 [colors]
-primary = { background = "#222834", foreground = "#d8d8d8"}
-cursor = { cursor = "#D8D8D8" }
+primary = { background = "#26233a", foreground = "#e0def4" }
+cursor = { cursor = "#e0def4" }
+normal = { black = "#26233a", red = "#eb6f92", green = "#a6e3a1", yellow = "#f6c177", blue = "#9ccfd8", magenta = "#c4a7e7", cyan = "#9ccfd8", white = "#e0def4" }
+bright = { black = "#6e6a86", red = "#eb6f92", green = "#a6e3a1", yellow = "#f6c177", blue = "#9ccfd8", magenta = "#c4a7e7", cyan = "#9ccfd8", white = "#e0def4" }
+dim = { black = "#26233a", red = "#eb6f92", green = "#a6e3a1", yellow = "#f6c177", blue = "#9ccfd8", magenta = "#c4a7e7", cyan = "#9ccfd8", white = "#e0def4" }
 
 [window]
 padding.x = 2
 padding.y = 2
 decorations = "buttonless"
-opacity = 0.99
+opacity = 0.9
 blur = true
 option_as_alt = "both"
 startup_mode = "Maximized"
