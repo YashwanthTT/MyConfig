@@ -1,9 +1,9 @@
+general.import = [
+    "~/.config/alacritty/themes/rosepine.toml"
+]
+
 [colors]
-primary = { background = "#26233a", foreground = "#e0def4" }
-cursor = { cursor = "#e0def4" }
-normal = { black = "#26233a", red = "#eb6f92", green = "#a6e3a1", yellow = "#f6c177", blue = "#9ccfd8", magenta = "#c4a7e7", cyan = "#9ccfd8", white = "#e0def4" }
-bright = { black = "#6e6a86", red = "#eb6f92", green = "#a6e3a1", yellow = "#f6c177", blue = "#9ccfd8", magenta = "#c4a7e7", cyan = "#9ccfd8", white = "#e0def4" }
-dim = { black = "#26233a", red = "#eb6f92", green = "#a6e3a1", yellow = "#f6c177", blue = "#9ccfd8", magenta = "#c4a7e7", cyan = "#9ccfd8", white = "#e0def4" }
+cursor = { cursor = "#D8D8D8" }
 
 [window]
 padding.x = 2
