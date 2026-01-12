@@ -1,15 +1,16 @@
 general.import = [
-    "~/.config/alacritty/themes/rosepine.toml"
+    "~/.config/alacritty/themes/onedark.toml"
 ]
 
 [colors]
+primary = { background = "#222834", foreground = "#d8d8d8"}
 cursor = { cursor = "#D8D8D8" }
 
 [window]
 padding.x = 2
 padding.y = 2
 decorations = "buttonless"
-opacity = 0.95
+opacity = 0.99
 blur = true
 option_as_alt = "both"
 startup_mode = "Maximized"
