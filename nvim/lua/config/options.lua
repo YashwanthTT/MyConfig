@@ -30,5 +30,4 @@ vim.opt.timeoutlen = 700
 vim.opt.ttimeoutlen = 100
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
-vim.o.guicursor = "a:block"
 vim.o.cmdheight = 0
