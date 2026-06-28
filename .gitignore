@@ -1,15 +1,12 @@
 raycast
 raycast/extensions
 .DS_Store
-/fish
 /opencode
 /configstore
 configstore/update-notifier-@google
-/typy
 /jj
 /github-copilot
-/coc
-/nv
+/hunk
 
 zed/prompts/prompts-library-db.0.mdb
 karabiner
