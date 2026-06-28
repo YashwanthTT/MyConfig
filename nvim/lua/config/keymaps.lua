@@ -25,6 +25,3 @@ keymap("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Live 
 
 keymap("n", "<leader>ww", "<cmd>w<CR>", { desc = "Save file" })
 keymap("n", "<leader>qq", "<cmd>x<CR>", { desc = "Save and quit" })
-
--- GitSigns
-keymap("n", "<leader>gh", "<cmd>Gitsigns<CR>", { desc = "Gitsigns" })
