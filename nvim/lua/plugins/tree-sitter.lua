@@ -23,6 +23,7 @@ return {
 				"graphql",
 				"bash",
 				"lua",
+				"python",
 				"vim",
 				"dockerfile",
 				"gitignore",
@@ -32,7 +33,7 @@ return {
 			},
 			-- You can add other options here, for example:
 			-- highlight = { enable = true },
-			-- indent = { enable = true },
+			indent = { enable = true },
 		})
 
 		vim.api.nvim_create_autocmd("FileType", {
@@ -40,7 +41,7 @@ return {
 				-- Enable treesitter highlighting and disable regex syntax
 				pcall(vim.treesitter.start)
 				-- Enable treesitter-based indentation
-				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+				-- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 			end,
 		})
 
