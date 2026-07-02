@@ -29,4 +29,3 @@ require("plugins.trouble")
 
 require("config.keymaps")
 require("config.autocmds")
-require("config.free")
