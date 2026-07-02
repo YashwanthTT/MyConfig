@@ -5,7 +5,7 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		-- import nvim-treesitter plugin
-		local treesitter_configs = require("nvim-treesitter.configs")
+		local treesitter_configs = require("nvim-treesitter.config")
 
 		treesitter_configs.setup({
 			ensure_installed = {

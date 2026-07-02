@@ -62,4 +62,9 @@ return {
 			})
 		end,
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		event = "BufReadPre",
+		opts = {},
+	},
 }
