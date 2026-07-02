@@ -25,3 +25,20 @@ keymap("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Live 
 
 keymap("n", "<leader>ww", "<cmd>w<CR>", { desc = "Save file" })
 keymap("n", "<leader>qq", "<cmd>x<CR>", { desc = "Save and quit" })
+
+-- Native snippet expansion
+keymap({ "i", "s" }, "<Tab>", function()
+	if vim.snippet.active({ direction = 1 }) then
+		return "<cmd>lua vim.snippet.jump(1)<cr>"
+	else
+		return "<Tab>"
+	end
+end, { expr = true, silent = true, desc = "Jump to next snippet placeholder" })
+
+keymap({ "i", "s" }, "<S-Tab>", function()
+	if vim.snippet.active({ direction = -1 }) then
+		return "<cmd>lua vim.snippet.jump(-1)<cr>"
+	else
+		return "<S-Tab>"
+	end
+end, { expr = true, silent = true, desc = "Jump to previous snippet placeholder" })

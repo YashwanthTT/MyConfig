@@ -26,12 +26,4 @@ require("mason-tool-installer").setup({
 	run_on_start = false,
 })
 
--- Common capabilities and attach function exposed for ftplugin scripts
-_G.lsp_capabilities = require("blink.cmp").get_lsp_capabilities()
 
-_G.lsp_on_attach = function(_, bufnr)
-	local opts = { buffer = bufnr }
-	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-end

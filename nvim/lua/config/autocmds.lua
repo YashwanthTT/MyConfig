@@ -50,8 +50,21 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.defer_fn(function()
 			local arg = vim.fn.argv(0)
 			if arg == "." or (arg ~= "" and vim.fn.isdirectory(arg) == 1) then
+				if _G.setup_oil then _G.setup_oil() end
 				require("oil").open(arg)
 			end
 		end, 0)
+	end,
+})
+
+-- Native LspAttach autocommand for mapping keys automatically
+vim.api.nvim_create_autocmd("LspAttach", {
+	group = augroup("lsp_attach"),
+	callback = function(args)
+		local bufnr = args.buf
+		local opts = { buffer = bufnr }
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 	end,
 })

@@ -1,11 +1,16 @@
 vim.pack.add({ "https://github.com/folke/trouble.nvim" })
 
--- Trouble.nvim configuration (diagnostics UI)
--- Changed: Removed Lazy.nvim spec wrapper. Calls setup() directly and sets keymaps.
+local function trouble(cmd)
+	return function()
+		if not _G.trouble_loaded then
+			require("trouble").setup({ use_diagnostic_signs = true })
+			_G.trouble_loaded = true
+		end
+		vim.cmd(cmd)
+	end
+end
 
-require("trouble").setup({ use_diagnostic_signs = true })
-
-vim.keymap.set("n", "<leader>st", "<cmd>Trouble<CR>")
-vim.keymap.set("n", "<leader>xx", "<cmd>Trouble diagnostics toggle focus=true<CR>")
-vim.keymap.set("n", "[d", "<cmd>Trouble diagnostics next focus=true<CR>")
-vim.keymap.set("n", "]d", "<cmd>Trouble diagnostics prev focus=true<CR>")
+vim.keymap.set("n", "<leader>st", trouble("Trouble"))
+vim.keymap.set("n", "<leader>xx", trouble("Trouble diagnostics toggle focus=true"))
+vim.keymap.set("n", "[d", trouble("Trouble diagnostics next focus=true"))
+vim.keymap.set("n", "]d", trouble("Trouble diagnostics prev focus=true"))
