@@ -1,19 +1,12 @@
-return {
-	{
-		"stevearc/oil.nvim",
-		cmd = "Oil",
-		keys = {
-			{
-				"<leader>e",
-				function()
-					require("oil").open()
-				end,
-				desc = "Open oil",
-			},
-		},
-		opts = {
-			skip_confirm_for_simple_edits = true,
-		},
-		dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-	},
-}
+vim.pack.add({ "https://github.com/stevearc/oil.nvim" })
+
+-- Oil.nvim configuration
+-- Changed: Removed Lazy.nvim spec wrapper. Calls setup() directly and sets keymap.
+
+require("oil").setup({
+	skip_confirm_for_simple_edits = true,
+})
+
+vim.keymap.set("n", "<leader>e", function()
+	require("oil").open()
+end, { desc = "Open oil" })

@@ -1,72 +1,58 @@
-return {
-	"nvim-treesitter/nvim-treesitter",
-	event = { "BufReadPre", "BufNewFile" },
-	branch = "main",
-	build = ":TSUpdate",
-	config = function()
-		-- import nvim-treesitter plugin
-		local treesitter_configs = require("nvim-treesitter.configs")
+vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" })
 
-		treesitter_configs.setup({
-			ensure_installed = {
-				"json",
-				"javascript",
-				"typescript",
-				"tsx",
-				"yaml",
-				"html",
-				"css",
-				"prisma",
-				"markdown",
-				"markdown_inline",
-				"svelte",
-				"graphql",
-				"bash",
-				"lua",
-				"python",
-				"vim",
-				"dockerfile",
-				"gitignore",
-				"query",
-				"vimdoc",
-				"c",
-			},
-			-- You can add other options here, for example:
-			-- highlight = { enable = true },
-			indent = { enable = true },
-		})
+-- Treesitter configuration
+-- Changed: Removed Lazy.nvim spec wrapper.
+-- Note: Neovim 0.13 has built-in treesitter highlighting enabled via ftplugins for
+-- bundled parsers (C, Lua, Markdown, Vimscript, Vimdoc, Query).
+-- nvim-treesitter (main branch) is now primarily a parser installer.
+-- Highlighting and indentation are handled natively by Neovim.
 
-		vim.api.nvim_create_autocmd("FileType", {
-			callback = function()
-				-- Enable treesitter highlighting and disable regex syntax
-				pcall(vim.treesitter.start)
-				-- Enable treesitter-based indentation
-				-- vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-			end,
-		})
+-- Configure the parser installer
+require("nvim-treesitter").setup()
 
-		-- configure treesitter
-		-- treesitter.setup({ -- enable syntax highlighting
-		--   highlight = {
-		--     enable = true,
-		--   },
-		--   -- enable indentation
-		--   indent = { enable = true },
-		--   -- ensure these language parsers are installed
-		--   installed = {
-		--   },
-		--   incremental_selection = {
-		--     enable = true,
-		--     keymaps = {
-		--       init_selection = "<C-space>",
-		--       node_incremental = "<C-space>",
-		--       scope_incremental = false,
-		--       node_decremental = "<bs>",
-		--     },
-		--   },
-		-- })
+-- Register bash parser for zsh files
+vim.treesitter.language.register("bash", "zsh")
 
-		-- use bash parser for zsh files
-		vim.treesitter.language.register("bash", "zsh")
+-- Auto-install parsers when a file is opened and no parser is available
+local installing = {}
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("treesitter_auto_install", { clear = true }),
+	callback = function(ev)
+		local lang = vim.treesitter.language.get_lang(ev.match) or ev.match
+		
+		-- Svelte files require html, css, javascript, typescript for injections
+		local dependencies = {}
+		if lang == "svelte" then
+			dependencies = { "html", "css", "javascript", "typescript" }
+		end
+		
+		local langs_to_check = { lang }
+		for _, dep in ipairs(dependencies) do
+			table.insert(langs_to_check, dep)
+		end
+
+		local ts = require("nvim-treesitter")
+		local available = ts.get_available()
+		local installed = ts.get_installed()
+
+		for _, l in ipairs(langs_to_check) do
+			if not vim.tbl_contains(installed, l) and vim.tbl_contains(available, l) and not installing[l] then
+				installing[l] = true
+				pcall(function() ts.install(l) end)
+			end
+		end
+
+		if vim.treesitter.language.add(lang) then
+			-- Parser available, enable highlighting
+			vim.treesitter.start(ev.buf, lang)
+		else
+			-- Start highlighting later once install finishes
+			vim.defer_fn(function()
+				if vim.treesitter.language.add(lang) then
+					pcall(function() vim.treesitter.start(ev.buf, lang) end)
+				end
+			end, 3000)
+		end
 	end,
-}
+})
