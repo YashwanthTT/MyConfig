@@ -25,7 +25,7 @@ require("plugins.tree-sitter")
 require("plugins.conform")
 require("plugins.linting")
 require("plugins.trouble")
--- copilot.lua is intentionally skipped (currently commented out)
+require("plugins.copilot")
 
 require("config.keymaps")
 require("config.autocmds")
