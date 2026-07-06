@@ -18,7 +18,6 @@ vim.g.loaded_matchparen = 1
 require("plugins.colorscheme")
 require("plugins.snacks")
 require("plugins.mini")
-require("plugins.Oil")
 require("plugins.blink")
 require("plugins.lsp")
 require("plugins.tree-sitter")
