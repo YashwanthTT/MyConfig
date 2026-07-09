@@ -5,9 +5,10 @@ vim.pack.add({
 })
 
 -- Blink.cmp configuration
--- Changed: Removed Lazy.nvim spec wrapper. Calls setup() directly.
 
-require("blink.cmp").setup({
+local cmp = require("blink.cmp")
+
+cmp.setup({
 	keymap = {
 		preset = "default",
 		["<CR>"] = { "accept", "fallback" },
