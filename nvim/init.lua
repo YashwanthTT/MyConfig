@@ -26,6 +26,7 @@ require("plugins.linting")
 require("plugins.trouble")
 require("plugins.flash")
 require("plugins.copilot")
+require("plugins.oil")
 
 require("config.keymaps")
 require("config.autocmds")

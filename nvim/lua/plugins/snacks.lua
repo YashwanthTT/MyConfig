@@ -75,10 +75,6 @@ end, { desc = "Find Files" })
 keymap("n", "<leader>gl", function()
 	Snacks.picker.git_log()
 end, { desc = "Git Log" })
--- Explorer
-keymap("n", "<leader>e", function()
-	Snacks.explorer()
-end, { desc = "File Explorer" })
 -- Grep
 keymap("n", "<leader>sb", function()
 	Snacks.picker.lines()
