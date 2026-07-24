@@ -126,14 +126,14 @@ layout {
                 // mode_tmux          "#[fg=#f5a97f]#[bg=#f5a97f,fg=#181926,bold]TMUX#[,fg=#f5a97f]"
 
                 // formatting for inactive tabs
-                tab_normal              "#,fg=#000000]#[bg=#000000,fg=#000000,bold] #[bg=#000000,fg=#D8D8D8,bold] {name}{floating_indicator}#[,fg=#000000,bold]"
-                tab_normal_fullscreen   "#,fg=#000000]#[bg=#000000,fg=#000000,bold] #[bg=#000000,fg=#D8D8D8,bold] {name}{fullscreen_indicator}#[,fg=#000000,bold]"
-                tab_normal_sync         "#,fg=#000000]#[bg=#000000,fg=#000000,bold] #[bg=#000000,fg=#D8D8D8,bold] {name}{sync_indicator}#[,fg=#000000,bold]"
+                tab_normal              "#,fg=none]#[bg=none,fg=none,bold] #[bg=none,fg=none,bold] {name}{floating_indicator}#[,fg=none,bold]"
+                tab_normal_fullscreen   "#,fg=none]#[bg=none,fg=none,bold] #[bg=none,fg=none,bold] {name}{fullscreen_indicator}#[,fg=none,bold]"
+                tab_normal_sync         "#,fg=none]#[bg=none,fg=none,bold] #[bg=none,fg=none,bold] {name}{sync_indicator}#[,fg=none,bold]"
 
                 // formatting for the current active tab (matching mode_normal green theme)
-                tab_active              "#,fg=#000000]#[bg=#000000,fg=#000000,bold] #[bg=#000000,fg=#a6da95,bold] {name}{floating_indicator}#[,fg=#000000,bold]"
-                tab_active_fullscreen   "#,fg=#000000]#[bg=#000000,fg=#000000,bold] #[bg=#000000,fg=#D8D8D8,bold] {name}{fullscreen_indicator}#[,fg=#000000,bold]"
-                tab_active_sync         "#,fg=#000000]#[bg=#000000,fg=#000000,bold] #[bg=#000000,fg=#D8D8D8,bold] {name}{sync_indicator}#[,fg=#000000,bold]"
+                tab_active              "#,fg=none]#[bg=none,fg=none,bold] #[bg=none,fg=#a6da95,bold] {name}{floating_indicator}#[,fg=none,bold]"
+                tab_active_fullscreen   "#,fg=none]#[bg=none,fg=none,bold] #[bg=none,fg=none,bold] {name}{fullscreen_indicator}#[,fg=none,bold]"
+                tab_active_sync         "#,fg=none]#[bg=none,fg=none,bold] #[bg=none,fg=none,bold] {name}{sync_indicator}#[,fg=none,bold]"
 
 
 
