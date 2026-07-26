@@ -24,15 +24,19 @@ require("copilot").setup({
 	},
 })
 
--- Ghost text highlight — dimmed white/grey like VS Code's Copilot ghost text
--- Applied via ColorScheme autocmd so it persists across colorscheme reloads
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "*",
-	callback = function()
-		vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#6b7280", italic = true })
-		vim.api.nvim_set_hl(0, "CopilotAnnotation", { fg = "#6b7280", italic = true })
-	end,
-})
+server =
+	{
+		type = "nodejs",
+	},
+	-- Ghost text highlight — dimmed white/grey like VS Code's Copilot ghost text
+	-- Applied via ColorScheme autocmd so it persists across colorscheme reloads
+	vim.api.nvim_create_autocmd("ColorScheme", {
+		pattern = "*",
+		callback = function()
+			vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#6b7280", italic = true })
+			vim.api.nvim_set_hl(0, "CopilotAnnotation", { fg = "#6b7280", italic = true })
+		end,
+	})
 
 -- Apply immediately for the current colorscheme
 vim.api.nvim_set_hl(0, "CopilotSuggestion", { fg = "#6b7280", italic = true })
