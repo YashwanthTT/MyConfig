@@ -2,7 +2,7 @@ general.import = [
     "~/.config/alacritty/themes/rose-pine.toml"
 ]
 [colors]                                            
-primary = { background = "#171B24", foreground = "#d8d8d8"}
+primary = { background = "#000000", foreground = "#d8d8d8"}
 cursor = { cursor = "#D8D8D8" }     
 
 [window]
