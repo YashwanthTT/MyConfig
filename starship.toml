@@ -7,11 +7,15 @@ $directory\
 right_format = "$git_branch"
 
 [directory]
-style = "fg:#61afef"
+style = "fg:#9ccfd8"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "~/"
 
 [git_branch]
 symbol = ""
-format = '[[ $symbol $branch ](fg:#61aFeF)]($style)'
+format = '[[ $symbol $branch ](fg:#c4a7e7)]($style)'
+
+[character]
+success_symbol = "[❯](fg:#e0def4)"
+error_symbol = "[❯](fg:#eb6f92)"

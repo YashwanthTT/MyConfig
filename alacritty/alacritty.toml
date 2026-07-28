@@ -1,10 +1,9 @@
 general.import = [
-    "~/.config/alacritty/themes/onedark.toml"
+    "~/.config/alacritty/themes/rose-pine.toml"
 ]
-
-[colors]
+[colors]                                            
 primary = { background = "#171B24", foreground = "#d8d8d8"}
-cursor = { cursor = "#D8D8D8" }
+cursor = { cursor = "#D8D8D8" }     
 
 [window]
 padding.x = 2
