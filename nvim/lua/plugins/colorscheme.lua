@@ -26,7 +26,7 @@ vim.cmd.colorscheme("rose-pine")
 -- apply extended transparency to various ui elements
 local function set_transparency()
 	vim.cmd([[
-		hi pmenu guibg=none ctermbg=none
+		hi pmenu guibg=none ctermbg=none 
 		hi pmenusel guibg=#9ccfd8 guifg=#191724 ctermbg=none
 		hi normal guibg=none ctermbg=none
 		hi normalnc guibg=none ctermbg=none
@@ -45,6 +45,12 @@ local function set_transparency()
 		hi MiniStatuslineFilename guibg=none ctermbg=none
 		hi MiniStatuslineFileinfo guibg=none ctermbg=none
 		hi MiniStatuslineInactive guibg=none ctermbg=none
+		hi BlinkCmpMenuDoc guibg=none ctermbg=none
+		hi BlinkCmpMenuDocBorder guibg=none ctermbg=none
+		hi BlinkCmpMenuDocSeparator guibg=none ctermbg=none
+		hi BlinkCmpDoc guibg=none ctermbg=none
+		hi BlinkCmpDocBorder guibg=none ctermbg=none
+		hi BlinkCmpDocSeparator guibg=none guifg=none ctermbg=none ctermfg=none
 	]])
 end
 
