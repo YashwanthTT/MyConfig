@@ -16,10 +16,6 @@
       "rev": "d521d3959f81f4fa58870ed329754f1dd5057511",
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
-    "cyberdream.nvim": {
-      "rev": "b9cc88378b776f33d3ea77164716f37c3f13ef72",
-      "src": "https://github.com/scottmckendry/cyberdream.nvim"
-    },
     "flash.nvim": {
       "rev": "b6346946d10d07998efee029fb0f7a593806d0cd",
       "src": "https://github.com/folke/flash.nvim"
