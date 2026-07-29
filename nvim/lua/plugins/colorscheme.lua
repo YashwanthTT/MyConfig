@@ -1,24 +1,34 @@
-vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
+vim.pack.add({ "https://github.com/rose-pine/neovim" })
 
--- Colorscheme configuration (tokyonight)
--- Changed: Removed Lazy.nvim spec wrapper. Now directly calls setup().
+-- Colorscheme configuration (rose-pine)
 
-require("tokyonight").setup({
-	transparent = true,
+require("rose-pine").setup({
+	variant = "auto",
+	dark_variant = "main",
+	dim_inactive_windows = false,
+	extend_background_behind_borders = true,
+
+	enable = {
+		legacy_highlights = true,
+		migrations = true,
+		terminal = true,
+	},
+
 	styles = {
-		sidebars = "transparent",
-		floats = "transparent",
+		bold = true,
+		italic = true,
+		transparency = true,
 	},
 })
 
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("rose-pine")
 
 -- apply extended transparency to various ui elements
 local function set_transparency()
 	vim.cmd([[
-		hi pmenu guibg=none ctermbg=none
-		hi pmenusel guibg= #61AFEF guifg=#000000 ctermbg=none
-    hi normal guibg=none ctermbg=none
+		hi pmenu guibg=none ctermbg=none 
+		hi pmenusel guibg=#9ccfd8 guifg=#191724 ctermbg=none
+		hi normal guibg=none ctermbg=none
 		hi normalnc guibg=none ctermbg=none
 		hi signcolumn guibg=none ctermbg=none
 		hi statusline guibg=none ctermbg=none
@@ -35,6 +45,12 @@ local function set_transparency()
 		hi MiniStatuslineFilename guibg=none ctermbg=none
 		hi MiniStatuslineFileinfo guibg=none ctermbg=none
 		hi MiniStatuslineInactive guibg=none ctermbg=none
+		hi BlinkCmpMenuDoc guibg=none ctermbg=none
+		hi BlinkCmpMenuDocBorder guibg=none ctermbg=none
+		hi BlinkCmpMenuDocSeparator guibg=none ctermbg=none
+		hi BlinkCmpDoc guibg=none ctermbg=none
+		hi BlinkCmpDocBorder guibg=none ctermbg=none
+		hi BlinkCmpDocSeparator guibg=none guifg=none ctermbg=none ctermfg=none
 	]])
 end
 
