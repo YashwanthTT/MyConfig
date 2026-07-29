@@ -8,7 +8,7 @@ require("snacks").setup({
 	indent = { enabled = true },
 	notifier = {
 		enabled = true,
-		timeout = 3000,
+		timeout = 1000,
 	},
 	picker = {
 		enabled = true,
