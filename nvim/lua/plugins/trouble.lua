@@ -1,22 +1,24 @@
-vim.pack.add({ "https://github.com/folke/trouble.nvim" })
+return {
+	{
+		"folke/trouble.nvim",
+		cmd = "Trouble",
+		opts = {
+			use_diagnostic_signs = true,
+		},
+		keys = {
+			{ "<leader>st", "<cmd>Trouble<cr>", desc = "Trouble" },
+			{ "<leader>xx", "<cmd>Trouble diagnostics toggle focus=true<cr>", desc = "Diagnostics (Trouble)" },
+			{ "[d", "<cmd>Trouble diagnostics next focus=true<cr>", desc = "Next Diagnostic" },
+			{ "]d", "<cmd>Trouble diagnostics prev focus=true<cr>", desc = "Prev Diagnostic" },
+		},
+		config = function(_, opts)
+			require("trouble").setup(opts)
 
-local function trouble(cmd)
-	return function()
-		if not _G.trouble_loaded then
-			require("trouble").setup({ use_diagnostic_signs = true })
-			_G.trouble_loaded = true
-		end
-		vim.cmd(cmd)
-	end
-end
-
-vim.keymap.set("n", "<leader>st", trouble("Trouble"))
-vim.keymap.set("n", "<leader>xx", trouble("Trouble diagnostics toggle focus=true"))
-vim.keymap.set("n", "[d", trouble("Trouble diagnostics next focus=true"))
-vim.keymap.set("n", "]d", trouble("Trouble diagnostics prev focus=true"))
-
-vim.keymap.set("n", "<leader>hd", function()
-	local enabled = vim.diagnostic.is_enabled()
-	vim.diagnostic.enable(not enabled)
-	vim.notify("Diagnostics " .. (enabled and "hidden" or "shown"))
-end, { desc = "Toggle diagnostics" })
+			vim.keymap.set("n", "<leader>hd", function()
+				local enabled = vim.diagnostic.is_enabled()
+				vim.diagnostic.enable(not enabled)
+				vim.notify("Diagnostics " .. (enabled and "hidden" or "shown"))
+			end, { desc = "Toggle diagnostics" })
+		end,
+	},
+}

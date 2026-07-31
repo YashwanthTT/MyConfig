@@ -1,35 +1,38 @@
-vim.pack.add({ "https://github.com/mfussenegger/nvim-lint" })
+return {
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local lint = require("lint")
 
--- nvim-lint configuration
--- Changed: Removed Lazy.nvim spec wrapper. Calls setup directly and creates autocmds/keymaps.
+			lint.linters_by_ft = {
+				lua = { "luacheck" },
+				python = { "ruff" },
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				javascriptreact = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
+				svelte = { "eslint_d" },
+				rust = { "clippy" },
+				-- markdown = { "markdownlint" },
+				-- sh = { "shellcheck" },
+				-- yaml = { "yamllint" },
+				-- json = { "jsonlint" },
+				-- dockerfile = { "hadolint" },
+			}
 
-local lint = require("lint")
+			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
 
-lint.linters_by_ft = {
-	lua = { "luacheck" },
-	python = { "ruff" },
-	javascript = { "eslint_d" },
-	typescript = { "eslint_d" },
-	javascriptreact = { "eslint_d" },
-	typescriptreact = { "eslint_d" },
-	svelte = { "eslint_d" },
-	rust = { "clippy" },
-	-- markdown = { "markdownlint" },
-	-- sh = { "shellcheck" },
-	-- yaml = { "yamllint" },
-	-- json = { "jsonlint" },
-	-- dockerfile = { "hadolint" },
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				group = lint_augroup,
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+
+			vim.keymap.set("n", "<leader>cl", function()
+				lint.try_lint()
+			end, { desc = "Trigger linting" })
+		end,
+	},
 }
-
-local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-	group = lint_augroup,
-	callback = function()
-		lint.try_lint()
-	end,
-})
-
-vim.keymap.set("n", "<leader>cl", function()
-	lint.try_lint()
-end, { desc = "Trigger linting" })

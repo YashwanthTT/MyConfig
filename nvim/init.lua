@@ -1,32 +1,46 @@
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Load options before lazy (mapleader must be set before lazy)
 require("config.options")
 
--- Enable module caching for faster startup (replaces lazy.nvim's automatic caching)
-vim.loader.enable()
+-- Setup lazy.nvim
+require("lazy").setup({
+	spec = {
+		{ import = "plugins" },
+	},
+	install = { colorscheme = { "tokyonight" } },
+	checker = { enabled = false },
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+				"netrwPlugin",
+				"matchit",
+				"matchparen",
+			},
+		},
+	},
+})
 
--- Disable unused built-in plugins (preserves Lazy.nvim's disabled_plugins list)
-vim.g.loaded_gzip = 1
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_tohtml = 1
-vim.g.loaded_tutor = 1
-vim.g.loaded_zipPlugin = 1
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_matchit = 1
-vim.g.loaded_matchparen = 1
-
--- Load plugin configurations
--- Order matters: colorscheme first, then UI, then functional plugins
-require("plugins.colorscheme")
-require("plugins.snacks")
-require("plugins.mini")
-require("plugins.blink")
-require("plugins.lsp")
-require("plugins.tree-sitter")
-require("plugins.conform")
-require("plugins.linting")
-require("plugins.trouble")
-require("plugins.flash")
-require("plugins.copilot")
-require("plugins.oil")
-
+-- Load keymaps and autocmds after plugins
 require("config.keymaps")
 require("config.autocmds")

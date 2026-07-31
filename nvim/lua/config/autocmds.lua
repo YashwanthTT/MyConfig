@@ -50,9 +50,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.defer_fn(function()
 			local arg = vim.fn.argv(0)
 			if arg == "." or (arg ~= "" and vim.fn.isdirectory(arg) == 1) then
-				if _G.setup_oil then
-					_G.setup_oil()
-				end
 				require("oil").open(arg)
 			end
 		end, 0)

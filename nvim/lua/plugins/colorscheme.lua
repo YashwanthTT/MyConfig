@@ -1,45 +1,49 @@
-vim.pack.add({ "https://github.com/folke/tokyonight.nvim" })
+return {
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
+		},
+		config = function(_, opts)
+			require("tokyonight").setup(opts)
+			vim.cmd.colorscheme("tokyonight")
 
--- Colorscheme configuration (tokyonight)
--- Changed: Removed Lazy.nvim spec wrapper. Now directly calls setup().
+			-- apply extended transparency to various ui elements
+			local function set_transparency()
+				vim.cmd([[
+					hi pmenu guibg=none ctermbg=none
+					hi pmenusel guibg= #61AFEF guifg=#000000 ctermbg=none
+					hi normal guibg=none ctermbg=none
+					hi normalnc guibg=none ctermbg=none
+					hi signcolumn guibg=none ctermbg=none
+					hi statusline guibg=none ctermbg=none
+					hi statuslinenc guibg=none ctermbg=none
+					hi vertsplit guibg=none ctermbg=none
+					hi tabline guibg=none ctermbg=none
+					hi tablinefill guibg=none ctermbg=none
+					hi tablinesel guibg=none ctermbg=none
+					hi neotreenormal guibg=none ctermbg=none
+					hi neotreenormalnc guibg=none ctermbg=none
+					hi neotreewinseparator guibg=none ctermbg=none
+					hi cursorline guibg=none ctermbg=none
+					hi MiniStatuslineMode guibg=none ctermbg=none
+					hi MiniStatuslineFilename guibg=none ctermbg=none
+					hi MiniStatuslineFileinfo guibg=none ctermbg=none
+					hi MiniStatuslineInactive guibg=none ctermbg=none
+				]])
+			end
 
-require("tokyonight").setup({
-	transparent = true,
-	styles = {
-		sidebars = "transparent",
-		floats = "transparent",
+			set_transparency()
+			vim.api.nvim_create_autocmd("bufenter", {
+				pattern = "*",
+				callback = set_transparency,
+			})
+		end,
 	},
-})
-
-vim.cmd.colorscheme("tokyonight")
-
--- apply extended transparency to various ui elements
-local function set_transparency()
-	vim.cmd([[
-		hi pmenu guibg=none ctermbg=none
-		hi pmenusel guibg= #61AFEF guifg=#000000 ctermbg=none
-    hi normal guibg=none ctermbg=none
-		hi normalnc guibg=none ctermbg=none
-		hi signcolumn guibg=none ctermbg=none
-		hi statusline guibg=none ctermbg=none
-		hi statuslinenc guibg=none ctermbg=none
-		hi vertsplit guibg=none ctermbg=none
-		hi tabline guibg=none ctermbg=none
-		hi tablinefill guibg=none ctermbg=none
-		hi tablinesel guibg=none ctermbg=none
-		hi neotreenormal guibg=none ctermbg=none
-		hi neotreenormalnc guibg=none ctermbg=none
-		hi neotreewinseparator guibg=none ctermbg=none
-		hi cursorline guibg=none ctermbg=none
-		hi MiniStatuslineMode guibg=none ctermbg=none
-		hi MiniStatuslineFilename guibg=none ctermbg=none
-		hi MiniStatuslineFileinfo guibg=none ctermbg=none
-		hi MiniStatuslineInactive guibg=none ctermbg=none
-	]])
-end
-
-set_transparency()
-vim.api.nvim_create_autocmd("bufenter", {
-	pattern = "*",
-	callback = set_transparency,
-})
+}

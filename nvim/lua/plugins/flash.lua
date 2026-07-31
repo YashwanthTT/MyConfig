@@ -1,7 +1,10 @@
-vim.pack.add({ "https://github.com/folke/flash.nvim" })
-
-require("flash").setup({})
-
-vim.keymap.set({ "n", "x", "o" }, "s", function()
-	require("flash").jump()
-end, { desc = "Flash" })
+return {
+	{
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {},
+		keys = {
+			{ "s", function() require("flash").jump() end, mode = { "n", "x", "o" }, desc = "Flash" },
+		},
+	},
+}
