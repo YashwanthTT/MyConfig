@@ -23,6 +23,9 @@ keymap("n", "<leader>wh", "<cmd>split<cr>")
 
 keymap("n", "<leader>rr", [[:%s/\<<C-r><C-w>\>//g<Left><Left>]], { desc = "Live preview replace" })
 
+keymap({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+keymap({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+
 keymap("n", "<leader>ww", "<cmd>w<CR>", { desc = "Save file" })
 keymap("n", "<leader>qq", "<cmd>x<CR>", { desc = "Save and quit" })
 
