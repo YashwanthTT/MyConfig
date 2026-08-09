@@ -14,7 +14,7 @@ return {
 		config = function(_, opts)
 			require("trouble").setup(opts)
 
-			vim.keymap.set("n", "<leader>hd", function()
+			vim.keymap.set("n", "<leader>td", function()
 				local enabled = vim.diagnostic.is_enabled()
 				vim.diagnostic.enable(not enabled)
 				vim.notify("Diagnostics " .. (enabled and "hidden" or "shown"))
