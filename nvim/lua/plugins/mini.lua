@@ -15,27 +15,60 @@ return {
 			require("mini.statusline").setup({
 				content = {
 					active = function()
-						local mode = MiniStatusline.section_mode({})
-						local filename = MiniStatusline.section_filename({})
+						local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
+						local git = MiniStatusline.section_git({ trunc_width = 40 })
+						local diff = MiniStatusline.section_diff({ trunc_width = 75 })
+						local filename = MiniStatusline.section_filename({ trunc_width = 140 })
 						return MiniStatusline.combine_groups({
-							{ hl = "MiniStatuslineMode", strings = { mode } },
+							{ hl = mode_hl, strings = { mode } },
+							{ hl = "MiniStatuslineDevinfo", strings = { git, diff } },
+							"%<",
 							{ hl = "MiniStatuslineFilename", strings = { filename } },
 						})
 					end,
+					inactive = function()
+						return "%#MiniStatuslineInactive#%F"
+					end,
 				},
-				use_icons = true,
-				set_vim_settings = true,
 			})
 
-			local highlights = {
-				"StatusLine",
-				"MiniStatuslineFileinfo",
-				"MiniStatuslineMode",
-				"MiniStatuslineFilename",
+			local mode_colors = {
+				MiniStatuslineModeNormal = "#9ccfd8", -- foam
+				MiniStatuslineModeInsert = "#c4a7e7", -- iris
+				MiniStatuslineModeVisual = "#f6c177", -- gold
+				MiniStatuslineModeReplace = "#eb6f92", -- love
+				MiniStatuslineModeCommand = "#ebbcba", -- rose
+				MiniStatuslineModeOther = "#ea9a97", -- rose
 			}
-			for _, hl in ipairs(highlights) do
-				vim.api.nvim_set_hl(0, hl, { bg = "none", ctermbg = "none" })
+
+			local statusline_highlights = {
+				"MiniStatuslineModeNormal",
+				"MiniStatuslineModeInsert",
+				"MiniStatuslineModeVisual",
+				"MiniStatuslineModeReplace",
+				"MiniStatuslineModeCommand",
+				"MiniStatuslineModeOther",
+				"MiniStatuslineDevinfo",
+				"MiniStatuslineFilename",
+				"MiniStatuslineFileinfo",
+				"MiniStatuslineInactive",
+			}
+
+			local function make_statusline_transparent()
+				for _, group in ipairs(statusline_highlights) do
+					local highlight = vim.api.nvim_get_hl(0, { name = group, link = false })
+					highlight.fg = mode_colors[group] or highlight.fg
+					highlight.bg = "none"
+					highlight.ctermbg = "none"
+					vim.api.nvim_set_hl(0, group, highlight)
+				end
 			end
+
+			make_statusline_transparent()
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				group = vim.api.nvim_create_augroup("mini_statusline_transparency", { clear = true }),
+				callback = make_statusline_transparent,
+			})
 
 			require("mini.pairs").setup()
 			-- require("mini.surround").setup()
