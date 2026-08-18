@@ -1,4 +1,18 @@
 {
+  "agent_servers": {
+    "opencode": {
+      "default_config_options": {
+        "model": "opencode/deepseek-v4-flash-free"
+      },
+      "type": "registry"
+    },
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "gemini": {
+      "type": "registry"
+    }
+  },
   "diff_view_style": "unified",
   "telemetry": {
     "metrics": false,
@@ -17,6 +31,7 @@
   "buffer_font_size": 16,
   "theme": "One Dark",
   "edit_predictions": {
+    "provider": "zed",
     "disabled_globs": [
       "**/.git",
       "**/.svn",
@@ -47,7 +62,9 @@
     "enabled_in_text_threads": false
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4.5"
@@ -264,9 +281,6 @@
   },
   "projects_online_by_default": false,
   "preferred_line_length": 120,
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
   "formatter": {
     "language_server": {
       "name": "biome"

@@ -109,11 +109,12 @@
       "space c r ": "editor::Rename",
       // Chat with AI
       "space a a": "agent::ToggleFocus",
+      "space a t": "workspace::ToggleLeftDock",
       "ctrl-\\": "workspace::ToggleRightDock",
       "cmd-k": "workspace::ToggleRightDock",
       "space a e": "assistant::InlineAssist",
       "cmd-l": "assistant::InlineAssist",
-      "space a t": "workspace::ToggleRightDock",
+      "space a p": "workspace::ToggleRightDock",
       "space g h d": "editor::ExpandAllDiffHunks",
       "space g h D": "git::Diff",
       "space g h r": "git::Restore",
