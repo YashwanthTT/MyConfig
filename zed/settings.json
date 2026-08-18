@@ -1,4 +1,5 @@
 {
+  "diff_view_style": "unified",
   "telemetry": {
     "metrics": false,
     "diagnostics": false
@@ -38,7 +39,7 @@
       "**/.pytest_cache",
       "**/.ruff_cache"
     ],
-    "mode": "eager",
+    "mode": "subtle",
     "copilot": {
       "proxy": null,
       "proxy_no_verify": null
