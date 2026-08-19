@@ -1,24 +1,24 @@
 return {
 	{
-		"folke/tokyonight.nvim",
+		"rose-pine/neovim",
+		name = "rose-pine",
 		lazy = false,
 		priority = 1000,
 		opts = {
-			transparent = true,
+			variant = "main",
 			styles = {
-				sidebars = "transparent",
-				floats = "transparent",
+				transparency = true,
 			},
 		},
 		config = function(_, opts)
-			require("tokyonight").setup(opts)
-			vim.cmd.colorscheme("tokyonight")
+			require("rose-pine").setup(opts)
+			vim.cmd.colorscheme("rose-pine")
 
 			-- apply extended transparency to various ui elements
 			local function set_transparency()
 				vim.cmd([[
 					hi pmenu guibg=none ctermbg=none
-					hi pmenusel guibg= #61AFEF guifg=#000000 ctermbg=none
+					hi pmenusel guibg= #C4A7E7 guifg=#191724 ctermbg=none
 					hi normal guibg=none ctermbg=none
 					hi normalnc guibg=none ctermbg=none
 					hi signcolumn guibg=none ctermbg=none
