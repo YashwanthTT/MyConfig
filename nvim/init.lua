@@ -23,7 +23,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	install = { colorscheme = { "rose-pine" } },
+	install = { colorscheme = { "tokyonight" } },
 	checker = { enabled = false },
 	performance = {
 		rtp = {
