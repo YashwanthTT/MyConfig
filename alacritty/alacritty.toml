@@ -7,9 +7,11 @@ primary = { background = "#171B24", foreground = "#d8d8d8"}
 cursor = { cursor = "#D8D8D8" }
 
 [window]
+decorations = "None"
+# decorations = "buttonless"
+dynamic_title = true
 padding.x = 2
 padding.y = 2
-decorations = "buttonless"
 opacity = 0.99
 blur = true
 option_as_alt = "both"
