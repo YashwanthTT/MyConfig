@@ -45,3 +45,9 @@ keymap({ "i", "s" }, "<S-Tab>", function()
 		return "<S-Tab>"
 	end
 end, { expr = true, silent = true, desc = "Jump to previous snippet placeholder" })
+
+keymap("n", "<leader>ld", function()
+	local enabled = vim.diagnostic.is_enabled()
+	vim.diagnostic.enable(not enabled)
+	vim.notify("Diagnostics " .. (enabled and "hidden" or "shown"))
+end, { desc = "Toggle diagnostics" })
