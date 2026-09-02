@@ -10,7 +10,7 @@ cursor = { cursor = "#D8D8D8" }
 decorations = "buttonless"
 padding.x = 2
 padding.y = 2
-opacity = 0.99
+opacity = 0.95
 blur = true
 option_as_alt = "both"
 startup_mode = "Maximized"
