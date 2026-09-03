@@ -6,6 +6,7 @@ return {
 		opts = {
 			bigfile = { enabled = true },
 			indent = { enabled = true },
+			explorer = { enabled = true },
 			notifier = {
 				enabled = true,
 				timeout = 1000,
@@ -59,6 +60,12 @@ return {
 		},
 		keys = {
 			-- find
+			{
+				"<leader>e",
+				function()
+					Snacks.explorer()
+				end,
+			},
 			{
 				"<leader>fc",
 				function()
