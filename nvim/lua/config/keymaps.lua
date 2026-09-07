@@ -51,3 +51,33 @@ keymap("n", "<leader>ld", function()
 	vim.diagnostic.enable(not enabled)
 	vim.notify("Diagnostics " .. (enabled and "hidden" or "shown"))
 end, { desc = "Toggle diagnostics" })
+
+keymap("n", "<leader>z", function()
+	local command = ""
+	local source_file = vim.fn.expand("%:p")
+	local executable_file = vim.fn.expand("%:p:r")
+	if vim.o.filetype == "c" or vim.o.filetype == "cpp" then
+		command = command .. vim.fn.expand(" -Wall")
+		command = command .. vim.fn.expand(" -Wextra")
+		command = command .. vim.fn.expand(" -o ")
+		command = command .. executable_file
+		command = command .. vim.fn.expand(" ")
+		command = command .. source_file
+		command = command .. vim.fn.expand(" && ")
+		command = command .. executable_file
+	elseif string.match(vim.fn.getline(1), "^#!/") then
+		command = command .. vim.fn.shellescape(source_file)
+	elseif vim.o.filetype == "python" then
+		command = command .. vim.fn.expand("python3 ")
+		command = command .. source_file
+	else
+		print("Unknown file type `" .. vim.o.filetype .. "`")
+	end
+
+	if command ~= "" then
+		vim.cmd("w")
+		vim.cmd("botright vsplit")
+		vim.cmd("terminal " .. command)
+		vim.cmd("startinsert")
+	end
+end, { desc = "Compile and run the current file" })
