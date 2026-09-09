@@ -4,6 +4,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {
+			style = "night",
 			transparent = true,
 			styles = {
 				sidebars = "transparent",
@@ -18,7 +19,7 @@ return {
 			local function set_transparency()
 				vim.cmd([[
 					hi pmenu guibg=none ctermbg=none
-					hi pmenusel guibg= #61AFEF guifg=#000000 ctermbg=none
+					hi pmenusel guibg= #7aa2f7 guifg=#000000 ctermbg=none
 					hi normal guibg=none ctermbg=none
 					hi normalnc guibg=none ctermbg=none
 					hi signcolumn guibg=none ctermbg=none
