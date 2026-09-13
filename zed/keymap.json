@@ -9,20 +9,16 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      // "shift shift": "file_finder::Toggle",
+      "ctrl-/": "workspace::ToggleBottomDock",
+      "cmd-shift-p": "file_finder::Toggle",
+      "cmd-p": "command_palette::Toggle"
     }
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
       // "j k": "vim::NormalBefore"
-    }
-  },
-  // Terminal
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-/": "workspace::ToggleBottomDock"
     }
   },
   // Window's navigation
@@ -180,7 +176,7 @@
       // Quit zed
       "space q a": "zed::Quit",
       // Terminal
-      "space t": "workspace::ToggleBottomDock",
+      "space t t": "workspace::ToggleBottomDock",
       // Windows management
       "space w h": "pane::SplitDown",
       "space w v": "pane::SplitRight",
@@ -241,18 +237,6 @@
     "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
     "bindings": {
       "b": "vim::AnyBrackets"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-shift-p": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-p": "command_palette::Toggle"
     }
   }
 ]
