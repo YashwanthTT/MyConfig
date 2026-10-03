@@ -1,8 +1,10 @@
-# Converted from alacritty.toml (tokyonight)
 background = #1a1b26
 foreground = #c0caf5
 cursor-color = #c0caf5
 cursor-text = #1a1b26
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
 selection-background = #283457
 selection-foreground = #c0caf5
 
