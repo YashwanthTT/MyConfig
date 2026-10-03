@@ -36,3 +36,6 @@ background-blur = true
 maximize = true
 window-decoration = none
 macos-option-as-alt = true
+
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+keybind = ctrl+f=toggle_quick_terminal
