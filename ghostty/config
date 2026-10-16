@@ -4,7 +4,7 @@ cursor-color = #c0caf5
 cursor-text = #1a1b26
 cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
+shell-integration-features = true
 selection-background = #283457
 selection-foreground = #c0caf5
 
@@ -27,8 +27,6 @@ palette = 15=#c0caf5
 
 font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 18.5
-font-style = "Bold"
-font-thicken = true
 
 window-padding-x = 2
 window-padding-y = 2
